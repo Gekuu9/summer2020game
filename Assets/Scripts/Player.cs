@@ -49,10 +49,10 @@ public class Player : MonoBehaviour {
         }
     }
 
-    public void Move(Vector3 location, float timeSeconds) {
+    public void Move(Vector3 location, float speed) {
         Vector3 distance = location - (transform.position - playerOffset);
-        moveVelocity = distance / (timeSeconds * 50f);
-        moveTimer = (int)(timeSeconds * 50);
+        moveVelocity = distance.normalized * speed / 50f;
+        moveTimer = (int)(distance.magnitude / (speed / 50f));
     }
 
     public void PathMove(Vector3 endPosition) {

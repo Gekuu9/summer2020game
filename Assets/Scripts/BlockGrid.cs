@@ -39,7 +39,14 @@ public class BlockGrid : ScriptableObject {
 
     public BlockRect[] blockRects;
 
+    [HideInInspector]
     public BlockType[] blocks;
+
+    public void InitGrid() {
+        blocks = new BlockType[xSize * ySize * zSize];
+    }
+
+
 
     /*
     public void LoadRects() {

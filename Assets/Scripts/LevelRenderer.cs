@@ -28,6 +28,8 @@ public class LevelRenderer : MonoBehaviour {
     private void Awake() {
         instance = this;
 
+        blockGrid.InitGrid();
+
         blockObjects = new GameObject[blockGrid.xSize * blockGrid.ySize * blockGrid.zSize];
 
         blocks = (BlockGrid.BlockType[])blockGrid.blocks.Clone();

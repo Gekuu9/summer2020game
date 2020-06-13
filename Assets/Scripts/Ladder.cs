@@ -17,6 +17,6 @@ public class Ladder : BlockHandler {
 
     public override void MovePlayerHere() {
         Vector3 location = GetComponent<BlockInfo>().gridLocation;
-        LevelRenderer.instance.player.Move(location, 0.5f);
+        LevelRenderer.instance.player.Move(location, 2f);
     }
 }
