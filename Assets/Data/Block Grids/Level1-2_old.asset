@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 824956d34cb4b2d4e8642850f5aafd8a, type: 3}
+  m_Name: Level1-2_old
+  m_EditorClassIdentifier: 
+  xSize: 11
+  ySize: 10
+  zSize: 12
+  blockRects:
+  - blockType: 2
+    prefabSetNumber: 0
+    corner0: {x: 0, y: 0, z: 1}
+    corner1: {x: 4, y: 1, z: 11}
+  - blockType: 22
+    prefabSetNumber: 0
+    corner0: {x: 2, y: 1, z: 0}
+    corner1: {x: 3, y: 2, z: 1}
+  - blockType: 2
+    prefabSetNumber: 0
+    corner0: {x: 2, y: 0, z: 0}
+    corner1: {x: 3, y: 1, z: 1}
+  - blockType: 9
+    prefabSetNumber: 0
+    corner0: {x: 4, y: 1, z: 1}
+    corner1: {x: 5, y: 2, z: 4}
+  - blockType: 9
+    prefabSetNumber: 0
+    corner0: {x: 5, y: 2, z: 1}
+    corner1: {x: 6, y: 3, z: 4}
+  - blockType: 9
+    prefabSetNumber: 0
+    corner0: {x: 6, y: 3, z: 1}
+    corner1: {x: 7, y: 4, z: 4}
+  - blockType: 2
+    prefabSetNumber: 0
+    corner0: {x: 7, y: 3, z: 1}
+    corner1: {x: 10, y: 4, z: 4}
+  - blockType: 8
+    prefabSetNumber: 0
+    corner0: {x: 7, y: 4, z: 4}
+    corner1: {x: 10, y: 5, z: 5}
+  - blockType: 8
+    prefabSetNumber: 0
+    corner0: {x: 7, y: 5, z: 5}
+    corner1: {x: 10, y: 6, z: 6}
+  - blockType: 8
+    prefabSetNumber: 0
+    corner0: {x: 7, y: 6, z: 6}
+    corner1: {x: 10, y: 7, z: 7}
+  - blockType: 3
+    prefabSetNumber: 0
+    corner0: {x: 4, y: 1, z: 4}
+    corner1: {x: 5, y: 7, z: 5}
+  - blockType: 3
+    prefabSetNumber: 0
+    corner0: {x: 4, y: 6, z: 5}
+    corner1: {x: 5, y: 7, z: 11}
+  - blockType: 3
+    prefabSetNumber: 0
+    corner0: {x: 5, y: 6, z: 4}
+    corner1: {x: 7, y: 7, z: 5}
+  - blockType: 5
+    prefabSetNumber: 0
+    corner0: {x: 4, y: 1, z: 5}
+    corner1: {x: 5, y: 6, z: 11}
+  - blockType: 4
+    prefabSetNumber: 0
+    corner0: {x: 5, y: 2, z: 4}
+    corner1: {x: 7, y: 6, z: 5}
+  - blockType: 2
+    prefabSetNumber: 0
+    corner0: {x: 5, y: 6, z: 5}
+    corner1: {x: 7, y: 7, z: 11}
+  - blockType: 2
+    prefabSetNumber: 0
+    corner0: {x: 7, y: 6, z: 7}
+    corner1: {x: 10, y: 7, z: 11}
+  - blockType: 0
+    prefabSetNumber: 0
+    corner0: {x: 4, y: 1, z: 6}
+    corner1: {x: 5, y: 4, z: 9}
+  - blockType: 2
+    prefabSetNumber: 0
+    corner0: {x: 4, y: 0, z: 6}
+    corner1: {x: 5, y: 1, z: 9}
+  - blockType: 4
+    prefabSetNumber: 0
+    corner0: {x: 0, y: 1, z: 11}
+    corner1: {x: 4, y: 10, z: 12}
+  - blockType: 4
+    prefabSetNumber: 0
+    corner0: {x: 4, y: 7, z: 11}
+    corner1: {x: 10, y: 10, z: 12}
+  - blockType: 5
+    prefabSetNumber: 0
+    corner0: {x: 10, y: 4, z: 1}
+    corner1: {x: 11, y: 10, z: 11}
+  decorationRects: []
+  setPieces: []
+  interactables:
+  - objectPrefab: {fileID: 5499756866489441398, guid: ea0dd93e923c61c4d9ca562d71a7555c,
+      type: 3}
+    position: {x: 4, y: 1, z: 7}
+    stateIndex: 0
+    targetPositions: []
+  - objectPrefab: {fileID: 4735521030286159011, guid: b4b41a0afbf35374b865be2a23d46c93,
+      type: 3}
+    position: {x: 5, y: 7, z: 10}
+    stateIndex: 0
+    targetPositions:
+    - {x: 4, y: 1, z: 7}

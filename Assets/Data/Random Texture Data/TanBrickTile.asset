@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb8348c65b9694c4ba6ac479f9f33236, type: 3}
+  m_Name: TanBrickTile
+  m_EditorClassIdentifier: 
+  textureOptions:
+  - texture: {fileID: 2800000, guid: d51deca49ee75664b80866a71267857b, type: 3}
+    normalMap: {fileID: 2800000, guid: 5398023130895e44bb0783ba70f83c54, type: 3}
+    frequency: 0.85
+  - texture: {fileID: 2800000, guid: 25b8d92014b91e5428a144a35a919427, type: 3}
+    normalMap: {fileID: 2800000, guid: e97f256cebf61344884c5df632bebe12, type: 3}
+    frequency: 0.05
+  - texture: {fileID: 2800000, guid: 7368ff518c08d2640801de95c7dc1e14, type: 3}
+    normalMap: {fileID: 2800000, guid: a96fc6931ad5118459d53563e795bfb5, type: 3}
+    frequency: 0.02
+  - texture: {fileID: 2800000, guid: 2e09985025a3d8a4b95851f53ef33928, type: 3}
+    normalMap: {fileID: 2800000, guid: cf6b7ea7e472f17418e4b9e047136253, type: 3}
+    frequency: 0.05
+  - texture: {fileID: 2800000, guid: 1a6b88c004f86664db01d8059c4c203e, type: 3}
+    normalMap: {fileID: 2800000, guid: 7d63ee362d511da4e83d781629645974, type: 3}
+    frequency: 0.01
+  - texture: {fileID: 2800000, guid: 7ec85ce27e067e840957ed9d25ba1fd3, type: 3}
+    normalMap: {fileID: 2800000, guid: 70c0c7bd45519ec4c90f50ca4e4f5a38, type: 3}
+    frequency: 0.01
+  - texture: {fileID: 2800000, guid: b5696a9c69d925948b38cdea55f4653a, type: 3}
+    normalMap: {fileID: 2800000, guid: c62773fc751d0ef4587559e176ae4a7e, type: 3}
+    frequency: 0.01

@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a093ba3d8a7a76549bfaaeffba749a94, type: 3}
+  m_Name: StatueSouth
+  m_EditorClassIdentifier: 
+  blockRects:
+  - blockType: 0
+    prefabSetNumber: 0
+    corner0: {x: 1, y: 1, z: 1}
+    corner1: {x: 4, y: 6, z: 3}
+  - blockType: 2
+    prefabSetNumber: 0
+    corner0: {x: 1, y: 0, z: 1}
+    corner1: {x: 4, y: 1, z: 3}
+  - blockType: 6
+    prefabSetNumber: 0
+    corner0: {x: 1, y: 1, z: 0}
+    corner1: {x: 4, y: 6, z: 1}
+  decorationRects:
+  - decorationIndex: 3
+    decorationSetNumber: 1
+    corner0: {x: 2, y: 1, z: 2}
+    corner1: {x: 3, y: 2, z: 3}
+  - decorationIndex: 6
+    decorationSetNumber: 3
+    corner0: {x: 4, y: 1, z: 2}
+    corner1: {x: 5, y: 6, z: 3}
+  - decorationIndex: 7
+    decorationSetNumber: 3
+    corner0: {x: 0, y: 1, z: 2}
+    corner1: {x: 1, y: 6, z: 3}
+  - decorationIndex: 10
+    decorationSetNumber: 2
+    corner0: {x: 2, y: 6, z: 2}
+    corner1: {x: 3, y: 7, z: 3}
+  - decorationIndex: 17
+    decorationSetNumber: 2
+    corner0: {x: 1, y: 6, z: 2}
+    corner1: {x: 2, y: 7, z: 3}
+  - decorationIndex: 16
+    decorationSetNumber: 2
+    corner0: {x: 3, y: 6, z: 2}
+    corner1: {x: 4, y: 7, z: 3}
+  - decorationIndex: 1
+    decorationSetNumber: 3
+    corner0: {x: 4, y: 1, z: 1}
+    corner1: {x: 5, y: 6, z: 2}
+  - decorationIndex: 3
+    decorationSetNumber: 3
+    corner0: {x: 0, y: 1, z: 1}
+    corner1: {x: 1, y: 6, z: 2}
+  interactables: []

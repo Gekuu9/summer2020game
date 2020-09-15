@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a093ba3d8a7a76549bfaaeffba749a94, type: 3}
+  m_Name: Canals1-1
+  m_EditorClassIdentifier: 
+  blockRects: []
+  decorationRects:
+  - decorationIndex: 0
+    decorationSetNumber: 4
+    corner0: {x: 7, y: 0, z: 2}
+    corner1: {x: 8, y: 1, z: 3}
+  - decorationIndex: 1
+    decorationSetNumber: 4
+    corner0: {x: 2, y: 0, z: 7}
+    corner1: {x: 3, y: 1, z: 8}
+  - decorationIndex: 2
+    decorationSetNumber: 4
+    corner0: {x: 7, y: 0, z: 12}
+    corner1: {x: 8, y: 1, z: 13}
+  - decorationIndex: 3
+    decorationSetNumber: 4
+    corner0: {x: 12, y: 0, z: 7}
+    corner1: {x: 13, y: 1, z: 8}
+  - decorationIndex: 0
+    decorationSetNumber: 4
+    corner0: {x: 1, y: 0, z: 2}
+    corner1: {x: 2, y: 1, z: 13}
+  - decorationIndex: 1
+    decorationSetNumber: 4
+    corner0: {x: 2, y: 0, z: 1}
+    corner1: {x: 13, y: 1, z: 2}
+  - decorationIndex: 2
+    decorationSetNumber: 0
+    corner0: {x: 13, y: 0, z: 2}
+    corner1: {x: 14, y: 1, z: 13}
+  - decorationIndex: 3
+    decorationSetNumber: 0
+    corner0: {x: 2, y: 0, z: 13}
+    corner1: {x: 13, y: 1, z: 14}
+  - decorationIndex: 4
+    decorationSetNumber: 0
+    corner0: {x: 1, y: 0, z: 1}
+    corner1: {x: 2, y: 1, z: 2}
+  - decorationIndex: 5
+    decorationSetNumber: 0
+    corner0: {x: 1, y: 0, z: 13}
+    corner1: {x: 2, y: 1, z: 14}
+  - decorationIndex: 6
+    decorationSetNumber: 0
+    corner0: {x: 13, y: 0, z: 13}
+    corner1: {x: 14, y: 1, z: 14}
+  - decorationIndex: 7
+    decorationSetNumber: 0
+    corner0: {x: 13, y: 0, z: 1}
+    corner1: {x: 14, y: 1, z: 2}
+  - decorationIndex: 8
+    decorationSetNumber: 0
+    corner0: {x: 7, y: 0, z: 1}
+    corner1: {x: 8, y: 1, z: 2}
+  - decorationIndex: 9
+    decorationSetNumber: 0
+    corner0: {x: 1, y: 0, z: 7}
+    corner1: {x: 2, y: 1, z: 8}
+  - decorationIndex: 12
+    decorationSetNumber: 0
+    corner0: {x: 7, y: 0, z: 13}
+    corner1: {x: 8, y: 1, z: 14}
+  - decorationIndex: 12
+    decorationSetNumber: 0
+    corner0: {x: 13, y: 0, z: 7}
+    corner1: {x: 14, y: 1, z: 8}
+  - decorationIndex: 17
+    decorationSetNumber: 0
+    corner0: {x: 1, y: 0, z: 4}
+    corner1: {x: 2, y: 1, z: 5}
+  - decorationIndex: 18
+    decorationSetNumber: 0
+    corner0: {x: 4, y: 0, z: 1}
+    corner1: {x: 5, y: 1, z: 2}
+  - decorationIndex: 17
+    decorationSetNumber: 0
+    corner0: {x: 1, y: 0, z: 10}
+    corner1: {x: 2, y: 1, z: 11}
+  - decorationIndex: 18
+    decorationSetNumber: 0
+    corner0: {x: 10, y: 0, z: 1}
+    corner1: {x: 11, y: 1, z: 2}
+  - decorationIndex: 19
+    decorationSetNumber: 0
+    corner0: {x: 13, y: 0, z: 4}
+    corner1: {x: 14, y: 1, z: 5}
+  - decorationIndex: 20
+    decorationSetNumber: 0
+    corner0: {x: 4, y: 0, z: 13}
+    corner1: {x: 5, y: 1, z: 14}
+  - decorationIndex: 19
+    decorationSetNumber: 0
+    corner0: {x: 13, y: 0, z: 10}
+    corner1: {x: 14, y: 1, z: 11}
+  - decorationIndex: 20
+    decorationSetNumber: 0
+    corner0: {x: 10, y: 0, z: 13}
+    corner1: {x: 11, y: 1, z: 14}
+  - decorationIndex: 0
+    decorationSetNumber: 0
+    corner0: {x: 7, y: 0, z: 14}
+    corner1: {x: 8, y: 1, z: 15}
+  - decorationIndex: 1
+    decorationSetNumber: 0
+    corner0: {x: 14, y: 0, z: 7}
+    corner1: {x: 15, y: 1, z: 8}
+  - decorationIndex: 26
+    decorationSetNumber: 0
+    corner0: {x: 15, y: 1, z: 7}
+    corner1: {x: 16, y: 2, z: 8}
+  - decorationIndex: 25
+    decorationSetNumber: 0
+    corner0: {x: 7, y: 1, z: 15}
+    corner1: {x: 8, y: 2, z: 16}
+  - decorationIndex: 22
+    decorationSetNumber: 0
+    corner0: {x: 15, y: 2, z: 7}
+    corner1: {x: 16, y: 10, z: 8}
+  - decorationIndex: 21
+    decorationSetNumber: 0
+    corner0: {x: 7, y: 2, z: 15}
+    corner1: {x: 8, y: 10, z: 16}
+  interactables: []

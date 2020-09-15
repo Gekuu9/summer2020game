@@ -1,0 +1,371 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 824956d34cb4b2d4e8642850f5aafd8a, type: 3}
+  m_Name: Level1-1
+  m_EditorClassIdentifier: 
+  xSize: 21
+  ySize: 10
+  zSize: 21
+  blockRects:
+  - blockType: 2
+    prefabSetNumber: 0
+    corner0: {x: 1, y: 0, z: 1}
+    corner1: {x: 16, y: 1, z: 16}
+  - blockType: 4
+    prefabSetNumber: 0
+    corner0: {x: 6, y: 1, z: 16}
+    corner1: {x: 16, y: 10, z: 17}
+  - blockType: 5
+    prefabSetNumber: 0
+    corner0: {x: 16, y: 1, z: 6}
+    corner1: {x: 17, y: 10, z: 16}
+  - blockType: 2
+    prefabSetNumber: 0
+    corner0: {x: 1, y: 0, z: 16}
+    corner1: {x: 6, y: 1, z: 20}
+  - blockType: 2
+    prefabSetNumber: 0
+    corner0: {x: 16, y: 0, z: 1}
+    corner1: {x: 20, y: 1, z: 6}
+  - blockType: 25
+    prefabSetNumber: 0
+    corner0: {x: 16, y: 1, z: 6}
+    corner1: {x: 17, y: 5, z: 7}
+  - blockType: 25
+    prefabSetNumber: 0
+    corner0: {x: 6, y: 1, z: 16}
+    corner1: {x: 7, y: 5, z: 17}
+  - blockType: 4
+    prefabSetNumber: 0
+    corner0: {x: 17, y: 1, z: 6}
+    corner1: {x: 20, y: 5, z: 7}
+  - blockType: 5
+    prefabSetNumber: 0
+    corner0: {x: 6, y: 1, z: 17}
+    corner1: {x: 7, y: 5, z: 20}
+  - blockType: 4
+    prefabSetNumber: 0
+    corner0: {x: 1, y: 1, z: 20}
+    corner1: {x: 6, y: 5, z: 21}
+  - blockType: 5
+    prefabSetNumber: 0
+    corner0: {x: 20, y: 1, z: 1}
+    corner1: {x: 21, y: 5, z: 6}
+  - blockType: 20
+    prefabSetNumber: 0
+    corner0: {x: 3, y: 1, z: 20}
+    corner1: {x: 4, y: 2, z: 21}
+  - blockType: 2
+    prefabSetNumber: 0
+    corner0: {x: 3, y: 0, z: 20}
+    corner1: {x: 4, y: 1, z: 21}
+  - blockType: 0
+    prefabSetNumber: 0
+    corner0: {x: 3, y: 2, z: 20}
+    corner1: {x: 4, y: 3, z: 21}
+  - blockType: 21
+    prefabSetNumber: 0
+    corner0: {x: 20, y: 1, z: 3}
+    corner1: {x: 21, y: 2, z: 4}
+  - blockType: 2
+    prefabSetNumber: 0
+    corner0: {x: 20, y: 0, z: 3}
+    corner1: {x: 21, y: 1, z: 4}
+  - blockType: 0
+    prefabSetNumber: 0
+    corner0: {x: 20, y: 2, z: 3}
+    corner1: {x: 21, y: 3, z: 4}
+  - blockType: 3
+    prefabSetNumber: 0
+    corner0: {x: 4, y: 0, z: 4}
+    corner1: {x: 13, y: 1, z: 13}
+  - blockType: 6
+    prefabSetNumber: 0
+    corner0: {x: 1, y: 1, z: 0}
+    corner1: {x: 20, y: 5, z: 1}
+  - blockType: 7
+    prefabSetNumber: 0
+    corner0: {x: 0, y: 1, z: 1}
+    corner1: {x: 1, y: 5, z: 20}
+  decorationRects:
+  - decorationIndex: 6
+    decorationSetNumber: 3
+    corner0: {x: 1, y: 0, z: 1}
+    corner1: {x: 4, y: 1, z: 16}
+  - decorationIndex: 6
+    decorationSetNumber: 3
+    corner0: {x: 4, y: 0, z: 1}
+    corner1: {x: 16, y: 1, z: 4}
+  - decorationIndex: 6
+    decorationSetNumber: 3
+    corner0: {x: 4, y: 0, z: 13}
+    corner1: {x: 16, y: 1, z: 16}
+  - decorationIndex: 6
+    decorationSetNumber: 3
+    corner0: {x: 13, y: 0, z: 4}
+    corner1: {x: 16, y: 1, z: 16}
+  - decorationIndex: 6
+    decorationSetNumber: 3
+    corner0: {x: 16, y: 0, z: 1}
+    corner1: {x: 20, y: 1, z: 6}
+  - decorationIndex: 6
+    decorationSetNumber: 3
+    corner0: {x: 1, y: 0, z: 16}
+    corner1: {x: 6, y: 1, z: 20}
+  - decorationIndex: 7
+    decorationSetNumber: 3
+    corner0: {x: 6, y: 0, z: 15}
+    corner1: {x: 8, y: 1, z: 16}
+  - decorationIndex: 7
+    decorationSetNumber: 3
+    corner0: {x: 10, y: 0, z: 15}
+    corner1: {x: 12, y: 1, z: 16}
+  - decorationIndex: 7
+    decorationSetNumber: 3
+    corner0: {x: 14, y: 0, z: 15}
+    corner1: {x: 15, y: 1, z: 16}
+  - decorationIndex: 8
+    decorationSetNumber: 3
+    corner0: {x: 15, y: 0, z: 14}
+    corner1: {x: 16, y: 1, z: 15}
+  - decorationIndex: 8
+    decorationSetNumber: 3
+    corner0: {x: 15, y: 0, z: 10}
+    corner1: {x: 16, y: 1, z: 12}
+  - decorationIndex: 8
+    decorationSetNumber: 3
+    corner0: {x: 15, y: 0, z: 6}
+    corner1: {x: 16, y: 1, z: 8}
+  - decorationIndex: 11
+    decorationSetNumber: 3
+    corner0: {x: 15, y: 0, z: 15}
+    corner1: {x: 16, y: 1, z: 16}
+  - decorationIndex: 11
+    decorationSetNumber: 3
+    corner0: {x: 5, y: 0, z: 19}
+    corner1: {x: 6, y: 1, z: 20}
+  - decorationIndex: 11
+    decorationSetNumber: 3
+    corner0: {x: 19, y: 0, z: 5}
+    corner1: {x: 20, y: 1, z: 6}
+  - decorationIndex: 7
+    decorationSetNumber: 3
+    corner0: {x: 16, y: 0, z: 5}
+    corner1: {x: 19, y: 1, z: 6}
+  - decorationIndex: 8
+    decorationSetNumber: 3
+    corner0: {x: 19, y: 0, z: 1}
+    corner1: {x: 20, y: 1, z: 3}
+  - decorationIndex: 8
+    decorationSetNumber: 3
+    corner0: {x: 19, y: 0, z: 4}
+    corner1: {x: 20, y: 1, z: 5}
+  - decorationIndex: 8
+    decorationSetNumber: 3
+    corner0: {x: 5, y: 0, z: 16}
+    corner1: {x: 6, y: 1, z: 19}
+  - decorationIndex: 7
+    decorationSetNumber: 3
+    corner0: {x: 1, y: 0, z: 19}
+    corner1: {x: 3, y: 1, z: 20}
+  - decorationIndex: 7
+    decorationSetNumber: 3
+    corner0: {x: 4, y: 0, z: 19}
+    corner1: {x: 5, y: 1, z: 20}
+  - decorationIndex: 15
+    decorationSetNumber: 3
+    corner0: {x: 5, y: 0, z: 15}
+    corner1: {x: 6, y: 1, z: 16}
+  - decorationIndex: 15
+    decorationSetNumber: 3
+    corner0: {x: 15, y: 0, z: 5}
+    corner1: {x: 16, y: 1, z: 6}
+  - decorationIndex: 19
+    decorationSetNumber: 3
+    corner0: {x: 3, y: 0, z: 14}
+    corner1: {x: 4, y: 1, z: 20}
+  - decorationIndex: 19
+    decorationSetNumber: 3
+    corner0: {x: 14, y: 0, z: 3}
+    corner1: {x: 20, y: 1, z: 4}
+  - decorationIndex: 19
+    decorationSetNumber: 3
+    corner0: {x: 2, y: 0, z: 2}
+    corner1: {x: 3, y: 1, z: 15}
+  - decorationIndex: 19
+    decorationSetNumber: 3
+    corner0: {x: 3, y: 0, z: 2}
+    corner1: {x: 15, y: 1, z: 3}
+  - decorationIndex: 19
+    decorationSetNumber: 3
+    corner0: {x: 3, y: 0, z: 10}
+    corner1: {x: 4, y: 1, z: 12}
+  - decorationIndex: 19
+    decorationSetNumber: 3
+    corner0: {x: 10, y: 0, z: 3}
+    corner1: {x: 12, y: 1, z: 4}
+  - decorationIndex: 19
+    decorationSetNumber: 3
+    corner0: {x: 3, y: 0, z: 5}
+    corner1: {x: 4, y: 1, z: 7}
+  - decorationIndex: 19
+    decorationSetNumber: 3
+    corner0: {x: 5, y: 0, z: 3}
+    corner1: {x: 7, y: 1, z: 4}
+  - decorationIndex: 7
+    decorationSetNumber: 3
+    corner0: {x: 2, y: 0, z: 1}
+    corner1: {x: 15, y: 1, z: 2}
+  - decorationIndex: 8
+    decorationSetNumber: 3
+    corner0: {x: 1, y: 0, z: 2}
+    corner1: {x: 2, y: 1, z: 15}
+  - decorationIndex: 15
+    decorationSetNumber: 3
+    corner0: {x: 1, y: 0, z: 1}
+    corner1: {x: 2, y: 1, z: 2}
+  - decorationIndex: 18
+    decorationSetNumber: 3
+    corner0: {x: 15, y: 0, z: 1}
+    corner1: {x: 16, y: 1, z: 2}
+  - decorationIndex: 14
+    decorationSetNumber: 3
+    corner0: {x: 15, y: 0, z: 2}
+    corner1: {x: 16, y: 1, z: 3}
+  - decorationIndex: 7
+    decorationSetNumber: 3
+    corner0: {x: 16, y: 0, z: 2}
+    corner1: {x: 19, y: 1, z: 3}
+  - decorationIndex: 11
+    decorationSetNumber: 3
+    corner0: {x: 19, y: 0, z: 2}
+    corner1: {x: 20, y: 1, z: 3}
+  - decorationIndex: 16
+    decorationSetNumber: 3
+    corner0: {x: 1, y: 0, z: 15}
+    corner1: {x: 2, y: 1, z: 16}
+  - decorationIndex: 12
+    decorationSetNumber: 3
+    corner0: {x: 2, y: 0, z: 15}
+    corner1: {x: 3, y: 1, z: 16}
+  - decorationIndex: 8
+    decorationSetNumber: 3
+    corner0: {x: 2, y: 0, z: 16}
+    corner1: {x: 3, y: 1, z: 19}
+  - decorationIndex: 11
+    decorationSetNumber: 3
+    corner0: {x: 2, y: 0, z: 19}
+    corner1: {x: 3, y: 1, z: 20}
+  - decorationIndex: 14
+    decorationSetNumber: 3
+    corner0: {x: 4, y: 0, z: 19}
+    corner1: {x: 5, y: 1, z: 20}
+  - decorationIndex: 10
+    decorationSetNumber: 3
+    corner0: {x: 4, y: 0, z: 14}
+    corner1: {x: 5, y: 1, z: 19}
+  - decorationIndex: 18
+    decorationSetNumber: 3
+    corner0: {x: 4, y: 0, z: 13}
+    corner1: {x: 5, y: 1, z: 14}
+  - decorationIndex: 14
+    decorationSetNumber: 3
+    corner0: {x: 3, y: 0, z: 13}
+    corner1: {x: 4, y: 1, z: 14}
+  - decorationIndex: 13
+    decorationSetNumber: 3
+    corner0: {x: 3, y: 0, z: 12}
+    corner1: {x: 4, y: 1, z: 13}
+  - decorationIndex: 14
+    decorationSetNumber: 3
+    corner0: {x: 3, y: 0, z: 9}
+    corner1: {x: 4, y: 1, z: 10}
+  - decorationIndex: 10
+    decorationSetNumber: 3
+    corner0: {x: 3, y: 0, z: 8}
+    corner1: {x: 4, y: 1, z: 9}
+  - decorationIndex: 13
+    decorationSetNumber: 3
+    corner0: {x: 3, y: 0, z: 7}
+    corner1: {x: 4, y: 1, z: 8}
+  - decorationIndex: 12
+    decorationSetNumber: 3
+    corner0: {x: 19, y: 0, z: 4}
+    corner1: {x: 20, y: 1, z: 5}
+  - decorationIndex: 9
+    decorationSetNumber: 3
+    corner0: {x: 14, y: 0, z: 4}
+    corner1: {x: 19, y: 1, z: 5}
+  - decorationIndex: 16
+    decorationSetNumber: 3
+    corner0: {x: 13, y: 0, z: 4}
+    corner1: {x: 14, y: 1, z: 5}
+  - decorationIndex: 12
+    decorationSetNumber: 3
+    corner0: {x: 13, y: 0, z: 3}
+    corner1: {x: 14, y: 1, z: 4}
+  - decorationIndex: 13
+    decorationSetNumber: 3
+    corner0: {x: 12, y: 0, z: 3}
+    corner1: {x: 13, y: 1, z: 4}
+  - decorationIndex: 12
+    decorationSetNumber: 3
+    corner0: {x: 9, y: 0, z: 3}
+    corner1: {x: 10, y: 1, z: 4}
+  - decorationIndex: 9
+    decorationSetNumber: 3
+    corner0: {x: 8, y: 0, z: 3}
+    corner1: {x: 9, y: 1, z: 4}
+  - decorationIndex: 13
+    decorationSetNumber: 3
+    corner0: {x: 7, y: 0, z: 3}
+    corner1: {x: 8, y: 1, z: 4}
+  - decorationIndex: 13
+    decorationSetNumber: 3
+    corner0: {x: 3, y: 0, z: 3}
+    corner1: {x: 4, y: 1, z: 4}
+  - decorationIndex: 12
+    decorationSetNumber: 3
+    corner0: {x: 4, y: 0, z: 3}
+    corner1: {x: 5, y: 1, z: 4}
+  - decorationIndex: 14
+    decorationSetNumber: 3
+    corner0: {x: 3, y: 0, z: 4}
+    corner1: {x: 4, y: 1, z: 5}
+  - decorationIndex: 20
+    decorationSetNumber: 3
+    corner0: {x: 8, y: 0, z: 15}
+    corner1: {x: 10, y: 1, z: 16}
+  - decorationIndex: 20
+    decorationSetNumber: 3
+    corner0: {x: 12, y: 0, z: 15}
+    corner1: {x: 14, y: 1, z: 16}
+  - decorationIndex: 21
+    decorationSetNumber: 3
+    corner0: {x: 15, y: 0, z: 12}
+    corner1: {x: 16, y: 1, z: 14}
+  - decorationIndex: 21
+    decorationSetNumber: 3
+    corner0: {x: 15, y: 0, z: 8}
+    corner1: {x: 16, y: 1, z: 10}
+  setPieces:
+  - setPiece: {fileID: 11400000, guid: b629408d202289c4b9823326c81473f1, type: 2}
+    cornerLocation: {x: 4, y: 1, z: 4}
+  - setPiece: {fileID: 11400000, guid: cfc0fdfdaffb2b845a5b980c34900913, type: 2}
+    cornerLocation: {x: 7, y: 1, z: 16}
+  - setPiece: {fileID: 11400000, guid: b3ffa42b67506374d9634e24d5c9a162, type: 2}
+    cornerLocation: {x: 11, y: 1, z: 16}
+  - setPiece: {fileID: 11400000, guid: d0ee8572efab7724281d672693cda200, type: 2}
+    cornerLocation: {x: 16, y: 1, z: 7}
+  - setPiece: {fileID: 11400000, guid: 28693c59ee5a945479033843c3f4c544, type: 2}
+    cornerLocation: {x: 16, y: 1, z: 11}
+  interactables: []

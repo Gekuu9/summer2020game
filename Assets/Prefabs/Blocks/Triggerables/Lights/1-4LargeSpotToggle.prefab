@@ -1,0 +1,293 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &229261964715043277
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7296768194501191593}
+  - component: {fileID: 2792609726642259348}
+  - component: {fileID: -3717074054677344850}
+  - component: {fileID: 8489846408573914942}
+  - component: {fileID: 9006430307138209693}
+  m_Layer: 0
+  m_Name: 1-4LargeSpotToggle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7296768194501191593
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229261964715043277}
+  m_LocalRotation: {x: 0.6830127, y: -0.18301275, z: -0.18301275, w: 0.6830127}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 120, y: 90, z: 90}
+--- !u!108 &2792609726642259348
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229261964715043277}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 0
+  m_Shape: 0
+  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Intensity: 25
+  m_Range: 30
+  m_SpotAngle: 90
+  m_InnerSpotAngle: 0
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.02
+    m_NormalBias: 0.1
+    m_NearPlane: 0.1
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!114 &-3717074054677344850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229261964715043277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c5a872e92eaa94da7b1b6e3d66b6a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridLocation: {x: 0, y: 0, z: 0}
+--- !u!114 &8489846408573914942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229261964715043277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb4da8964d4cd641843a2b59a011392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSurface: 0
+  state: 0
+--- !u!114 &9006430307138209693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229261964715043277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2c7667d43cb96f44970375d5ad6a47d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  northIn: 0
+  eastIn: 0
+  southIn: 0
+  westIn: 0
+  northEastIn: 0
+  southEastIn: 0
+  southWestIn: 0
+  northWestIn: 0
+  upIn: 0
+  downIn: 0
+  upNorthIn: 0
+  upEastIn: 0
+  upSouthIn: 0
+  upWestIn: 0
+  downNorthIn: 0
+  downEastIn: 0
+  downSouthIn: 0
+  downWestIn: 0
+  upNorthEastIn: 0
+  upSouthEastIn: 0
+  upSouthWestIn: 0
+  upNorthWestIn: 0
+  downNorthEastIn: 0
+  downSouthEastIn: 0
+  downSouthWestIn: 0
+  downNorthWestIn: 0
+  northOut: 0
+  eastOut: 0
+  southOut: 0
+  westOut: 0
+  northEastOut: 0
+  southEastOut: 0
+  southWestOut: 0
+  northWestOut: 0
+  upOut: 0
+  downOut: 0
+  upNorthOut: 0
+  upEastOut: 0
+  upSouthOut: 0
+  upWestOut: 0
+  downNorthOut: 0
+  downEastOut: 0
+  downSouthOut: 0
+  downWestOut: 0
+  upNorthEastOut: 0
+  upSouthEastOut: 0
+  upSouthWestOut: 0
+  upNorthWestOut: 0
+  downNorthEastOut: 0
+  downSouthEastOut: 0
+  downSouthWestOut: 0
+  downNorthWestOut: 0
+  variantRules:
+  - northIn: 0
+    eastIn: 0
+    southIn: 0
+    westIn: 0
+    northEastIn: 0
+    southEastIn: 0
+    southWestIn: 0
+    northWestIn: 0
+    upIn: 0
+    downIn: 0
+    upNorthIn: 0
+    upEastIn: 0
+    upSouthIn: 0
+    upWestIn: 0
+    downNorthIn: 0
+    downEastIn: 0
+    downSouthIn: 0
+    downWestIn: 0
+    upNorthEastIn: 0
+    upSouthEastIn: 0
+    upSouthWestIn: 0
+    upNorthWestIn: 0
+    downNorthEastIn: 0
+    downSouthEastIn: 0
+    downSouthWestIn: 0
+    downNorthWestIn: 0
+    northOut: 0
+    eastOut: 0
+    southOut: 0
+    westOut: 0
+    northEastOut: 0
+    southEastOut: 0
+    southWestOut: 0
+    northWestOut: 0
+    upOut: 0
+    downOut: 0
+    upNorthOut: 0
+    upEastOut: 0
+    upSouthOut: 0
+    upWestOut: 0
+    downNorthOut: 0
+    downEastOut: 0
+    downSouthOut: 0
+    downWestOut: 0
+    upNorthEastOut: 0
+    upSouthEastOut: 0
+    upSouthWestOut: 0
+    upNorthWestOut: 0
+    downNorthEastOut: 0
+    downSouthEastOut: 0
+    downSouthWestOut: 0
+    downNorthWestOut: 0
+  - northIn: 1
+    eastIn: 1
+    southIn: 1
+    westIn: 1
+    northEastIn: 1
+    southEastIn: 1
+    southWestIn: 1
+    northWestIn: 1
+    upIn: 0
+    downIn: 1
+    upNorthIn: 0
+    upEastIn: 0
+    upSouthIn: 0
+    upWestIn: 0
+    downNorthIn: 1
+    downEastIn: 1
+    downSouthIn: 1
+    downWestIn: 1
+    upNorthEastIn: 0
+    upSouthEastIn: 0
+    upSouthWestIn: 0
+    upNorthWestIn: 0
+    downNorthEastIn: 1
+    downSouthEastIn: 1
+    downSouthWestIn: 1
+    downNorthWestIn: 1
+    northOut: 1
+    eastOut: 1
+    southOut: 1
+    westOut: 1
+    northEastOut: 1
+    southEastOut: 1
+    southWestOut: 1
+    northWestOut: 1
+    upOut: 0
+    downOut: 1
+    upNorthOut: 0
+    upEastOut: 0
+    upSouthOut: 0
+    upWestOut: 0
+    downNorthOut: 1
+    downEastOut: 1
+    downSouthOut: 1
+    downWestOut: 1
+    upNorthEastOut: 0
+    upSouthEastOut: 0
+    upSouthWestOut: 0
+    upNorthWestOut: 0
+    downNorthEastOut: 1
+    downSouthEastOut: 1
+    downSouthWestOut: 1
+    downNorthWestOut: 1
