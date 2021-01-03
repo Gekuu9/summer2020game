@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cube : BlockHandler {
+public class Cube : Block {
 
     public override bool surfaceAbove {
         get { return true; }
@@ -14,27 +14,15 @@ public class Cube : BlockHandler {
         }
     }
 
-    private void OnMouseEnter() {
-        GetComponent<OutlineOrthoSingle>().enabled = true;
-    }
-
-    private void OnMouseExit() {
-        GetComponent<OutlineOrthoSingle>().enabled = false;
-    }
-
-    public override void MovePlayerHere() {
-        Vector3Int position = Vector3Int.RoundToInt(GetComponent<BlockInfo>().gridLocation);
+    public override bool MovePlayerHere() {
+        Vector3Int position = gridLocation;
         position.y += 1;
-        LevelRenderer.instance.GetObject(position).GetComponent<BlockHandler>().MovePlayerHere();
+        return LevelRenderer.instance.GetBlock(position).MovePlayerHere();
     }
 
     public override bool FindPathHere() {
-        Vector3Int position = Vector3Int.RoundToInt(GetComponent<BlockInfo>().gridLocation);
+        Vector3Int position = gridLocation;
         position.y += 1;
-        return LevelRenderer.instance.GetObject(position).GetComponent<BlockHandler>().FindPathHere();
-    }
-
-    private void OnEnable() {
-        GetComponent<OutlineOrthoSingle>().enabled = false;
+        return LevelRenderer.instance.GetBlock(position).FindPathHere();
     }
 }

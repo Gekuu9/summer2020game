@@ -12,10 +12,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 824956d34cb4b2d4e8642850f5aafd8a, type: 3}
   m_Name: Level1-4-3
   m_EditorClassIdentifier: 
-  xSize: 0
-  ySize: 0
-  zSize: 0
-  blockRects: []
+  xSize: 16
+  ySize: 10
+  zSize: 16
+  blockRects:
+  - blockType: 2
+    prefabSetNumber: 0
+    corner0: {x: 1, y: 0, z: 1}
+    corner1: {x: 15, y: 1, z: 15}
+  - blockType: 4
+    prefabSetNumber: 0
+    corner0: {x: 1, y: 1, z: 15}
+    corner1: {x: 15, y: 7, z: 16}
+  - blockType: 5
+    prefabSetNumber: 0
+    corner0: {x: 15, y: 1, z: 1}
+    corner1: {x: 16, y: 7, z: 15}
+  - blockType: 6
+    prefabSetNumber: 0
+    corner0: {x: 1, y: 1, z: 0}
+    corner1: {x: 15, y: 7, z: 1}
+  - blockType: 7
+    prefabSetNumber: 0
+    corner0: {x: 0, y: 1, z: 1}
+    corner1: {x: 1, y: 7, z: 15}
   decorationRects: []
   setPieces: []
-  interactables: []
+  interactables:
+  - objectPrefab: {fileID: 3385002072891622125, guid: 1f5a973f104a52c45932cf49b8848818,
+      type: 3}
+    position: {x: 3, y: 1, z: 3}
+    stateIndex: 0
+    targetPositions: []
+  - objectPrefab: {fileID: 3385002072891622125, guid: 1f5a973f104a52c45932cf49b8848818,
+      type: 3}
+    position: {x: 12, y: 1, z: 3}
+    stateIndex: 3
+    targetPositions: []
+  - objectPrefab: {fileID: 3385002072891622125, guid: 1f5a973f104a52c45932cf49b8848818,
+      type: 3}
+    position: {x: 12, y: 1, z: 12}
+    stateIndex: 2
+    targetPositions: []
+  - objectPrefab: {fileID: 3385002072891622125, guid: 1f5a973f104a52c45932cf49b8848818,
+      type: 3}
+    position: {x: 3, y: 1, z: 12}
+    stateIndex: 1
+    targetPositions: []

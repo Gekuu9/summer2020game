@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
 public class MainUI : MonoBehaviour {
@@ -13,16 +14,23 @@ public class MainUI : MonoBehaviour {
 
     // Whether the screen is currently fading in or out
     [HideInInspector]
-    public bool fading;
+    public FadeStatus status;
+
+    public enum FadeStatus {
+        clear,
+        black,
+        fadingIn,
+        fadingOut
+    }
 
     public IEnumerator LevelFadeOut() {
-        fading = true;
-        while (fading) {
+        status = FadeStatus.fadingOut;
+        while (status == FadeStatus.fadingOut) {
             fadeImage.color = Color.Lerp(fadeImage.color, Color.black, fadeSpeed * Time.deltaTime);
 
             if (fadeImage.color.a >= 0.99) {
                 fadeImage.color = Color.black;
-                fading = false;
+                status = FadeStatus.black;
             } else {
                 yield return null;
             }
@@ -30,47 +38,59 @@ public class MainUI : MonoBehaviour {
     }
 
     public IEnumerator LevelFadeOut(float fadeMultiplier) {
-        fading = true;
-        while (fading) {
+        status = FadeStatus.fadingOut;
+        while (status == FadeStatus.fadingOut) {
             fadeImage.color = Color.Lerp(fadeImage.color, Color.black, fadeSpeed * fadeMultiplier * Time.deltaTime);
 
             if (fadeImage.color.a >= 0.99) {
                 fadeImage.color = Color.black;
-                fading = false;
-            }
-            else {
+                status = FadeStatus.black;
+            } else {
                 yield return null;
             }
         }
     }
 
     public IEnumerator LevelFadeIn() {
-        fading = true;
-        while (fading) {
+        status = FadeStatus.fadingIn;
+        while (status == FadeStatus.fadingIn) {
             fadeImage.color = Color.Lerp(fadeImage.color, Color.clear, fadeSpeed * Time.deltaTime);
 
             if (fadeImage.color.a <= 0.01f) {
                 fadeImage.color = Color.clear;
-                fading = false;
-            }
-            else {
+                status = FadeStatus.clear;
+            } else {
                 yield return null;
             }
         }
     }
 
     public IEnumerator LevelFadeIn(float fadeMultiplier) {
-        fading = true;
-        while (fading) {
+        status = FadeStatus.fadingIn;
+        while (status == FadeStatus.fadingIn) {
             fadeImage.color = Color.Lerp(fadeImage.color, Color.clear, fadeSpeed * fadeMultiplier * Time.deltaTime);
 
             if (fadeImage.color.a <= 0.01f) {
                 fadeImage.color = Color.clear;
-                fading = false;
-            }
-            else {
+                status = FadeStatus.clear;
+            } else {
                 yield return null;
             }
+        }
+    }
+
+    public IEnumerator LevelFadeInLinear(float fadeTime) {
+        status = FadeStatus.fadingIn;
+        while (status == FadeStatus.fadingIn) {
+            Color color = fadeImage.color;
+            color.a -= Time.deltaTime / fadeTime;
+            if (color.a <= 0.01) {
+                color.a = 0;
+                status = FadeStatus.clear;
+            }
+                
+            fadeImage.color = color;
+            yield return null;
         }
     }
 }

@@ -139,8 +139,6 @@ GameObject:
   - component: {fileID: 2709503247394964036}
   - component: {fileID: 6895687470324332850}
   - component: {fileID: 7220650799625726416}
-  - component: {fileID: 186185627683188666}
-  - component: {fileID: -1104897977459084534}
   m_Layer: 0
   m_Name: PushBlock
   m_TagString: Untagged
@@ -194,85 +192,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87bec9f35d6a0f54e8c24608873ccde4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushSpeed: 0.015
-  moving: 0
---- !u!114 &186185627683188666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 374966969721028058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c5a872e92eaa94da7b1b6e3d66b6a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  defaultPathRules: {fileID: 11400000, guid: b947e176b85e462479254fbf52c07d51, type: 2}
+  alternatePathRules: []
+  pathfindingRules: {fileID: 0}
+  containedBlock: {fileID: 0}
   gridLocation: {x: 0, y: 0, z: 0}
---- !u!114 &-1104897977459084534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 374966969721028058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a36b8e2aec7def439a27adaad9de05f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  northIn: 0
-  eastIn: 0
-  southIn: 0
-  westIn: 0
-  northEastIn: 0
-  southEastIn: 0
-  southWestIn: 0
-  northWestIn: 0
-  upIn: 0
-  downIn: 0
-  upNorthIn: 0
-  upEastIn: 0
-  upSouthIn: 0
-  upWestIn: 0
-  downNorthIn: 0
-  downEastIn: 0
-  downSouthIn: 0
-  downWestIn: 0
-  upNorthEastIn: 0
-  upSouthEastIn: 0
-  upSouthWestIn: 0
-  upNorthWestIn: 0
-  downNorthEastIn: 0
-  downSouthEastIn: 0
-  downSouthWestIn: 0
-  downNorthWestIn: 0
-  northOut: 0
-  eastOut: 0
-  southOut: 0
-  westOut: 0
-  northEastOut: 0
-  southEastOut: 0
-  southWestOut: 0
-  northWestOut: 0
-  upOut: 0
-  downOut: 0
-  upNorthOut: 0
-  upEastOut: 0
-  upSouthOut: 0
-  upWestOut: 0
-  downNorthOut: 0
-  downEastOut: 0
-  downSouthOut: 0
-  downWestOut: 0
-  upNorthEastOut: 0
-  upSouthEastOut: 0
-  upSouthWestOut: 0
-  upNorthWestOut: 0
-  downNorthEastOut: 0
-  downSouthEastOut: 0
-  downSouthWestOut: 0
-  downNorthWestOut: 0
+  bottomCorner: {x: 0, y: 0, z: 0}
+  topCorner: {x: 1, y: 1, z: 1}
+  pushSpeed: 1.75
+  moving: 0
 --- !u!1 &1588836230907718872
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,6 +373,7 @@ GameObject:
   - component: {fileID: 632665209851069630}
   - component: {fileID: 7585127427863237050}
   - component: {fileID: 6449771496200067416}
+  - component: {fileID: 817453330999771795}
   m_Layer: 0
   m_Name: North
   m_TagString: Untagged
@@ -557,6 +486,22 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &817453330999771795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4140001481014143556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cd44b82cf414ad4a8544c8c188c88b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extraObjects:
+  - {fileID: 1588836230907718872}
+  toggleChildren: 0
+  outlineEnabled: 0
 --- !u!1 &4549989393852190346
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,6 +595,7 @@ GameObject:
   - component: {fileID: 2416250763080793346}
   - component: {fileID: 3785590858304920633}
   - component: {fileID: 5091730206054767135}
+  - component: {fileID: 4474082282713759639}
   m_Layer: 0
   m_Name: East
   m_TagString: Untagged
@@ -762,6 +708,22 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &4474082282713759639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5002384649006206564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cd44b82cf414ad4a8544c8c188c88b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extraObjects:
+  - {fileID: 5478239125568133656}
+  toggleChildren: 0
+  outlineEnabled: 0
 --- !u!1 &5206562346031838186
 GameObject:
   m_ObjectHideFlags: 0
@@ -934,6 +896,7 @@ GameObject:
   - component: {fileID: 8708390724967942901}
   - component: {fileID: 5086578239252434280}
   - component: {fileID: 6626945599400839296}
+  - component: {fileID: 8033434009880092109}
   m_Layer: 0
   m_Name: South
   m_TagString: Untagged
@@ -1046,6 +1009,22 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &8033434009880092109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5505360825726122442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cd44b82cf414ad4a8544c8c188c88b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extraObjects:
+  - {fileID: 2411435974946933173}
+  toggleChildren: 0
+  outlineEnabled: 0
 --- !u!1 &7966953315855145817
 GameObject:
   m_ObjectHideFlags: 0
@@ -1157,6 +1136,7 @@ GameObject:
   - component: {fileID: 4350017725778069147}
   - component: {fileID: 4592571442256435126}
   - component: {fileID: 2534447711076016995}
+  - component: {fileID: 4823629427235692454}
   m_Layer: 0
   m_Name: West
   m_TagString: Untagged
@@ -1269,3 +1249,19 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &4823629427235692454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8590678227733845099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cd44b82cf414ad4a8544c8c188c88b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extraObjects:
+  - {fileID: 4549989393852190346}
+  toggleChildren: 0
+  outlineEnabled: 0

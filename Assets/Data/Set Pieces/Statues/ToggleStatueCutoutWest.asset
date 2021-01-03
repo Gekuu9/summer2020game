@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a093ba3d8a7a76549bfaaeffba749a94, type: 3}
+  m_Name: ToggleStatueCutoutWest
+  m_EditorClassIdentifier: 
+  blockRects:
+  - blockType: 0
+    prefabSetNumber: 0
+    corner0: {x: 1, y: 1, z: 1}
+    corner1: {x: 3, y: 6, z: 4}
+  - blockType: 2
+    prefabSetNumber: 0
+    corner0: {x: 1, y: 0, z: 1}
+    corner1: {x: 3, y: 1, z: 4}
+  - blockType: 7
+    prefabSetNumber: 0
+    corner0: {x: 0, y: 1, z: 1}
+    corner1: {x: 1, y: 6, z: 4}
+  decorationRects:
+  - decorationIndex: 14
+    decorationSetNumber: 3
+    corner0: {x: 2, y: 1, z: 4}
+    corner1: {x: 3, y: 6, z: 5}
+  - decorationIndex: 13
+    decorationSetNumber: 3
+    corner0: {x: 2, y: 1, z: 0}
+    corner1: {x: 3, y: 6, z: 1}
+  - decorationIndex: 11
+    decorationSetNumber: 2
+    corner0: {x: 2, y: 6, z: 2}
+    corner1: {x: 3, y: 7, z: 3}
+  - decorationIndex: 18
+    decorationSetNumber: 2
+    corner0: {x: 2, y: 6, z: 1}
+    corner1: {x: 3, y: 7, z: 2}
+  - decorationIndex: 19
+    decorationSetNumber: 2
+    corner0: {x: 2, y: 6, z: 3}
+    corner1: {x: 3, y: 7, z: 4}
+  - decorationIndex: 8
+    decorationSetNumber: 3
+    corner0: {x: 1, y: 1, z: 4}
+    corner1: {x: 2, y: 6, z: 5}
+  - decorationIndex: 10
+    decorationSetNumber: 3
+    corner0: {x: 1, y: 1, z: 0}
+    corner1: {x: 2, y: 6, z: 1}
+  interactables:
+  - objectPrefab: {fileID: 4924115965149326356, guid: 76a930267934ecc45880ab7bc423a3f7,
+      type: 3}
+    position: {x: 2, y: 1, z: 2}
+    stateIndex: 0
+    targetPositions: []

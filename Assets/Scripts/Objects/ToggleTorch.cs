@@ -3,38 +3,54 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
 
-public class ToggleTorch : BlockHandler, TriggerableObject {
+public class ToggleTorch : Block, TriggerableObject {
+
+    public string[] requiredFlagNames;
+    public bool allFlagsRequired;
 
     [HideInInspector]
-    public bool state;
+    public bool isTorchOn;
 
     public virtual void Setup(int stateIndex, Vector3Int[] targetPositions, Vector3Int cornerLocation) {
-        state = stateIndex > 0;
-        GetComponentInChildren<Light>().enabled = state;
-        if (state) {
-            GetComponentInChildren<ParticleSystem>().Play();
-        } else {
-            GetComponentInChildren<ParticleSystem>().Stop();
+        isTorchOn = stateIndex > 0;
+
+        foreach (string flagName in requiredFlagNames) {
+            if (SaveDataManager.instance.GetBoolFlag(flagName)) {
+                isTorchOn = true;
+                if (!allFlagsRequired) {
+                    break;
+                }
+            } else {
+                isTorchOn = false;
+                if (allFlagsRequired) {
+                    break;
+                }
+            }
+        }
+
+        transform.Find("Fire").gameObject.SetActive(isTorchOn);
+        foreach (AudioSource source in GetComponentsInChildren<AudioSource>()) {
+            if (!isTorchOn) source.Stop();
         }
     }
 
     public void Trigger() {
-        state = !state;
-        GetComponentInChildren<Light>().enabled = state;
-        if (state) {
-            GetComponentInChildren<ParticleSystem>().Play();
-        } else {
-            GetComponentInChildren<ParticleSystem>().Stop();
+        isTorchOn = !isTorchOn;
+        transform.Find("Fire").gameObject.SetActive(isTorchOn);
+        foreach (AudioSource source in GetComponentsInChildren<AudioSource>()) {
+            if (isTorchOn) source.Play();
+            else source.Stop();
         }
     }
 
     public override bool FindPathHere() {
-        Vector3 location = GetComponent<BlockInfo>().gridLocation;
+        Vector3 location = gridLocation;
         return LevelRenderer.instance.player.PathMove(location, true);
     }
 
-    public override void MovePlayerHere() {
-        Vector3 location = GetComponent<BlockInfo>().gridLocation;
+    public override bool MovePlayerHere() {
+        Vector3 location = gridLocation;
         LevelRenderer.instance.player.Move(location, 3f);
+        return true;
     }
 }

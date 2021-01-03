@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : BlockHandler {
+public class Door : Block {
 
     public Vector3 movePlayerOffset;
 
@@ -15,38 +15,13 @@ public class Door : BlockHandler {
         }
     }
 
-    private void OnMouseEnter() {
-        if (GetComponent<OutlineOrthoSingle>()) GetComponent<OutlineOrthoSingle>().enabled = true;
-        if (GetComponent<OutlineOrtho>()) GetComponent<OutlineOrtho>().enabled = true;
-        if (transform.Find("Arrow")) {
-            transform.Find("Arrow").gameObject.SetActive(true);
-        }
-    }
-
-    private void OnMouseExit() {
-        if (GetComponent<OutlineOrthoSingle>()) GetComponent<OutlineOrthoSingle>().enabled = false;
-        if (GetComponent<OutlineOrtho>()) GetComponent<OutlineOrtho>().enabled = false;
-        if (transform.Find("Arrow")) {
-            transform.Find("Arrow").gameObject.SetActive(false);
-        }
-    }
-
-    private void OnEnable() {
-        if (GetComponent<OutlineOrthoSingle>()) GetComponent<OutlineOrthoSingle>().enabled = false;
-        if (GetComponent<OutlineOrtho>()) GetComponent<OutlineOrtho>().enabled = false;
-        if (transform.Find("Arrow")) {
-            transform.Find("Arrow").gameObject.SetActive(false);
-        }
-    }
-
     public override bool FindPathHere() {
-        Vector3 location = GetComponent<BlockInfo>().gridLocation;
-        return LevelRenderer.instance.player.PathMove(location);
+        return LevelRenderer.instance.player.PathMove(gridLocation);
     }
 
-    public override void MovePlayerHere() {
-        Vector3 location = GetComponent<BlockInfo>().gridLocation;
-        LevelRenderer.instance.player.Move(location + movePlayerOffset, 3f);
+    public override bool MovePlayerHere() {
+        LevelRenderer.instance.player.Move(gridLocation + movePlayerOffset, 3f, false);
         LevelRenderer.instance.LevelTransition(nextLevelIndex);
+        return true;
     }
 }

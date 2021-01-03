@@ -29,7 +29,9 @@ public class CutsceneManager : MonoBehaviour {
     }
 
     public void EndCutscene() {
-        currentCamera.GetComponent<CinemachineVirtualCamera>().Priority = -1;
+        if (currentCamera.GetComponent<CinemachineVirtualCamera>()) {
+            currentCamera.GetComponent<CinemachineVirtualCamera>().Priority = -1;
+        }
         if (fadeMusic) MusicController.instance.transform.GetComponent<AudioSource>().outputAudioMixerGroup.audioMixer.FindSnapshot("Default").TransitionTo(1);
         if (suspendInput) EventHandler.instance.HandleInput();
     }

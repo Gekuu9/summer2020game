@@ -6,23 +6,28 @@ public class ProgressTorch : ToggleTorch {
 
     public string flagNamePrefix;
 
+    private int flagIndex;
     private string fullFlagName;
 
     private bool setup = false;
     
     public override void Setup(int stateIndex, Vector3Int[] targetPositions, Vector3Int cornerLocation) {
+        flagIndex = stateIndex;
         fullFlagName = flagNamePrefix + stateIndex.ToString();
-        state = SaveDataManager.instance.GetBoolFlag(fullFlagName);
+        isTorchOn = SaveDataManager.instance.GetBoolFlag(fullFlagName);
 
-        transform.Find("Fire").gameObject.SetActive(state);
+        transform.Find("Fire").gameObject.SetActive(isTorchOn);
 
         setup = true;
     }
 
+    
     private void OnEnable() {
         if (!setup) return;
-        state = SaveDataManager.instance.GetBoolFlag(fullFlagName);
-
-        transform.Find("Fire").gameObject.SetActive(state);
+        bool newState = SaveDataManager.instance.GetBoolFlag(fullFlagName);
+        if (!isTorchOn && newState) {
+            LevelRenderer.instance.levelObject.PlayCutsceneIndex(flagIndex - 1);
+        }
     }
+    
 }

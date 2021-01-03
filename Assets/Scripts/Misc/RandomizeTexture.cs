@@ -11,7 +11,7 @@ public class RandomizeTexture : MonoBehaviour {
     private void Awake() {
         int seed;
 
-        if (GetComponent<BlockInfo>()) {
+        if (GetComponent<Block>()) {
             seed = transform.GetSiblingIndex();
         } else {
             seed = transform.parent.GetSiblingIndex() * (1 + transform.GetSiblingIndex());

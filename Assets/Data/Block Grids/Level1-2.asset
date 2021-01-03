@@ -333,6 +333,22 @@ MonoBehaviour:
     decorationSetNumber: 1
     corner0: {x: 0, y: 1, z: 4}
     corner1: {x: 1, y: 2, z: 5}
+  - decorationIndex: 20
+    decorationSetNumber: 2
+    corner0: {x: 1, y: 19, z: 19}
+    corner1: {x: 10, y: 20, z: 20}
+  - decorationIndex: 21
+    decorationSetNumber: 2
+    corner0: {x: 10, y: 19, z: 1}
+    corner1: {x: 11, y: 20, z: 19}
+  - decorationIndex: 22
+    decorationSetNumber: 2
+    corner0: {x: 1, y: 19, z: 0}
+    corner1: {x: 10, y: 20, z: 1}
+  - decorationIndex: 23
+    decorationSetNumber: 2
+    corner0: {x: 0, y: 19, z: 1}
+    corner1: {x: 1, y: 20, z: 19}
   setPieces: []
   interactables:
   - objectPrefab: {fileID: 4735521030286159011, guid: a3e5cc764e028e845bb67409f6bb070a,

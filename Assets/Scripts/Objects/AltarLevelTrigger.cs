@@ -23,7 +23,7 @@ public class AltarLevelTrigger : AltarTrigger {
 
         targets = new TriggerableObject[targetPositions.Length];
         for (int i = 0; i < targetPositions.Length; i++) {
-            targets[i] = LevelRenderer.instance.GetObject(targetPositions[i] + cornerLocation).GetComponent<TriggerableObject>();
+            targets[i] = LevelRenderer.instance.GetBlock(targetPositions[i] + cornerLocation).GetComponent<TriggerableObject>();
         }
     }
 

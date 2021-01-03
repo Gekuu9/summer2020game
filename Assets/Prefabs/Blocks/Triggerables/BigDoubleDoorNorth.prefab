@@ -137,8 +137,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4488752167772154991}
-  - component: {fileID: 2245397393892352671}
-  - component: {fileID: 7318223842190480142}
   - component: {fileID: 8795923627912458815}
   - component: {fileID: 3471254288995377668}
   m_Layer: 0
@@ -166,188 +164,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2245397393892352671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3819211900150003413}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c5a872e92eaa94da7b1b6e3d66b6a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gridLocation: {x: 0, y: 0, z: 0}
---- !u!114 &7318223842190480142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3819211900150003413}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2c7667d43cb96f44970375d5ad6a47d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  northIn: 0
-  eastIn: 0
-  southIn: 0
-  westIn: 0
-  northEastIn: 0
-  southEastIn: 0
-  southWestIn: 0
-  northWestIn: 0
-  upIn: 0
-  downIn: 0
-  upNorthIn: 0
-  upEastIn: 0
-  upSouthIn: 0
-  upWestIn: 0
-  downNorthIn: 0
-  downEastIn: 0
-  downSouthIn: 0
-  downWestIn: 0
-  upNorthEastIn: 0
-  upSouthEastIn: 0
-  upSouthWestIn: 0
-  upNorthWestIn: 0
-  downNorthEastIn: 0
-  downSouthEastIn: 0
-  downSouthWestIn: 0
-  downNorthWestIn: 0
-  northOut: 0
-  eastOut: 0
-  southOut: 0
-  westOut: 0
-  northEastOut: 0
-  southEastOut: 0
-  southWestOut: 0
-  northWestOut: 0
-  upOut: 0
-  downOut: 0
-  upNorthOut: 0
-  upEastOut: 0
-  upSouthOut: 0
-  upWestOut: 0
-  downNorthOut: 0
-  downEastOut: 0
-  downSouthOut: 0
-  downWestOut: 0
-  upNorthEastOut: 0
-  upSouthEastOut: 0
-  upSouthWestOut: 0
-  upNorthWestOut: 0
-  downNorthEastOut: 0
-  downSouthEastOut: 0
-  downSouthWestOut: 0
-  downNorthWestOut: 0
-  variantRules:
-  - northIn: 0
-    eastIn: 0
-    southIn: 0
-    westIn: 0
-    northEastIn: 0
-    southEastIn: 0
-    southWestIn: 0
-    northWestIn: 0
-    upIn: 0
-    downIn: 0
-    upNorthIn: 0
-    upEastIn: 0
-    upSouthIn: 0
-    upWestIn: 0
-    downNorthIn: 0
-    downEastIn: 0
-    downSouthIn: 0
-    downWestIn: 0
-    upNorthEastIn: 0
-    upSouthEastIn: 0
-    upSouthWestIn: 0
-    upNorthWestIn: 0
-    downNorthEastIn: 0
-    downSouthEastIn: 0
-    downSouthWestIn: 0
-    downNorthWestIn: 0
-    northOut: 0
-    eastOut: 0
-    southOut: 0
-    westOut: 0
-    northEastOut: 0
-    southEastOut: 0
-    southWestOut: 0
-    northWestOut: 0
-    upOut: 0
-    downOut: 0
-    upNorthOut: 0
-    upEastOut: 0
-    upSouthOut: 0
-    upWestOut: 0
-    downNorthOut: 0
-    downEastOut: 0
-    downSouthOut: 0
-    downWestOut: 0
-    upNorthEastOut: 0
-    upSouthEastOut: 0
-    upSouthWestOut: 0
-    upNorthWestOut: 0
-    downNorthEastOut: 0
-    downSouthEastOut: 0
-    downSouthWestOut: 0
-    downNorthWestOut: 0
-  - northIn: 0
-    eastIn: 1
-    southIn: 0
-    westIn: 1
-    northEastIn: 1
-    southEastIn: 1
-    southWestIn: 1
-    northWestIn: 1
-    upIn: 0
-    downIn: 0
-    upNorthIn: 0
-    upEastIn: 0
-    upSouthIn: 0
-    upWestIn: 0
-    downNorthIn: 0
-    downEastIn: 0
-    downSouthIn: 0
-    downWestIn: 0
-    upNorthEastIn: 0
-    upSouthEastIn: 0
-    upSouthWestIn: 0
-    upNorthWestIn: 0
-    downNorthEastIn: 0
-    downSouthEastIn: 0
-    downSouthWestIn: 0
-    downNorthWestIn: 0
-    northOut: 0
-    eastOut: 1
-    southOut: 0
-    westOut: 1
-    northEastOut: 1
-    southEastOut: 1
-    southWestOut: 1
-    northWestOut: 1
-    upOut: 0
-    downOut: 0
-    upNorthOut: 0
-    upEastOut: 0
-    upSouthOut: 0
-    upWestOut: 0
-    downNorthOut: 0
-    downEastOut: 0
-    downSouthOut: 0
-    downWestOut: 0
-    upNorthEastOut: 0
-    upSouthEastOut: 0
-    upSouthWestOut: 0
-    upNorthWestOut: 0
-    downNorthEastOut: 0
-    downSouthEastOut: 0
-    downSouthWestOut: 0
-    downNorthWestOut: 0
 --- !u!111 &8795923627912458815
 Animation:
   m_ObjectHideFlags: 0
@@ -377,6 +193,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a114d147fd1c4a84bb92eedc68ec9ac5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultPathRules: {fileID: 11400000, guid: b947e176b85e462479254fbf52c07d51, type: 2}
+  alternatePathRules:
+  - {fileID: 11400000, guid: b947e176b85e462479254fbf52c07d51, type: 2}
+  - {fileID: 11400000, guid: 578555ff0f206f14d85ec89d2a1282df, type: 2}
+  pathfindingRules: {fileID: 0}
+  gridLocation: {x: 0, y: 0, z: 0}
+  bottomCorner: {x: -1, y: 0, z: 0}
+  topCorner: {x: 2, y: 3, z: 1}
   movePlayerOffset: {x: 0, y: 0, z: 0}
   nextLevelIndex: 0
   state: 0
@@ -405,8 +229,6 @@ MonoBehaviour:
   closedScales:
   - {x: 1, y: 1, z: 1}
   - {x: 1, y: 1, z: 1}
-  bottomCorner: {x: -1, y: 0, z: 0}
-  topCorner: {x: 2, y: 3, z: 1}
 --- !u!1 &6978954597870463632
 GameObject:
   m_ObjectHideFlags: 0

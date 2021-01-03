@@ -9,8 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 342352379467793766}
-  - component: {fileID: 8298166032600504817}
-  - component: {fileID: 780719710461850270}
+  - component: {fileID: 7345438322166734794}
   m_Layer: 0
   m_Name: RuneCornerWall45NorthEast
   m_TagString: Untagged
@@ -35,7 +34,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8298166032600504817
+--- !u!114 &7345438322166734794
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,74 +43,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1120154959736758236}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c5a872e92eaa94da7b1b6e3d66b6a5, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c7b08176c6e1274081d719cbda9dc15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultPathRules: {fileID: 11400000, guid: b947e176b85e462479254fbf52c07d51, type: 2}
+  alternatePathRules: []
+  pathfindingRules: {fileID: 0}
+  containedBlock: {fileID: 0}
   gridLocation: {x: 0, y: 0, z: 0}
---- !u!114 &780719710461850270
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1120154959736758236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a36b8e2aec7def439a27adaad9de05f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  northIn: 0
-  eastIn: 0
-  southIn: 0
-  westIn: 0
-  northEastIn: 0
-  southEastIn: 0
-  southWestIn: 0
-  northWestIn: 0
-  upIn: 0
-  downIn: 0
-  upNorthIn: 0
-  upEastIn: 0
-  upSouthIn: 0
-  upWestIn: 0
-  downNorthIn: 0
-  downEastIn: 0
-  downSouthIn: 0
-  downWestIn: 0
-  upNorthEastIn: 0
-  upSouthEastIn: 0
-  upSouthWestIn: 0
-  upNorthWestIn: 0
-  downNorthEastIn: 0
-  downSouthEastIn: 0
-  downSouthWestIn: 0
-  downNorthWestIn: 0
-  northOut: 0
-  eastOut: 0
-  southOut: 0
-  westOut: 0
-  northEastOut: 0
-  southEastOut: 0
-  southWestOut: 0
-  northWestOut: 0
-  upOut: 0
-  downOut: 0
-  upNorthOut: 0
-  upEastOut: 0
-  upSouthOut: 0
-  upWestOut: 0
-  downNorthOut: 0
-  downEastOut: 0
-  downSouthOut: 0
-  downWestOut: 0
-  upNorthEastOut: 0
-  upSouthEastOut: 0
-  upSouthWestOut: 0
-  upNorthWestOut: 0
-  downNorthEastOut: 0
-  downSouthEastOut: 0
-  downSouthWestOut: 0
-  downNorthWestOut: 0
+  bottomCorner: {x: 0, y: 0, z: 0}
+  topCorner: {x: 1, y: 1, z: 1}
 --- !u!1 &4408736720172689736
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,7 +360,7 @@ GameObject:
   - component: {fileID: 9141459932359722151}
   - component: {fileID: 7654018436842555746}
   - component: {fileID: 2982997250891637766}
-  - component: {fileID: 1997697334505918774}
+  - component: {fileID: 8893689790594951145}
   - component: {fileID: 3906727065761032054}
   m_Layer: 0
   m_Name: testWallNorth
@@ -502,7 +443,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 6.1232336e-17}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1997697334505918774
+--- !u!114 &8893689790594951145
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -540,7 +481,7 @@ GameObject:
   - component: {fileID: 7754077674438991733}
   - component: {fileID: 7648872818828464871}
   - component: {fileID: 2979837422225945264}
-  - component: {fileID: 8043606388952221591}
+  - component: {fileID: 4501892361520548987}
   - component: {fileID: 2930698682435799506}
   m_Layer: 0
   m_Name: testWallEast
@@ -623,7 +564,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000002, y: 1, z: 6.123235e-17}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8043606388952221591
+--- !u!114 &4501892361520548987
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

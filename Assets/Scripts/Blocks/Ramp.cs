@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ramp : BlockHandler {
+public class Ramp : Block {
 
     public float yOffset;
 
@@ -12,30 +12,15 @@ public class Ramp : BlockHandler {
         }
     }
 
-    private void OnMouseEnter() {
-        GetComponent<OutlineOrthoSingle>().enabled = true;
-    }
-
-    private void OnMouseExit() {
-        GetComponent<OutlineOrthoSingle>().enabled = false;
-    }
-
     public override bool FindPathHere() {
-        Vector3 location = GetComponent<BlockInfo>().gridLocation;
-        return LevelRenderer.instance.player.PathMove(location);
+        return LevelRenderer.instance.player.PathMove(gridLocation);
     }
 
-    public override void MovePlayerHere() {
-        Vector3 location = GetComponent<BlockInfo>().gridLocation;
+    public override bool MovePlayerHere() {
+        Vector3 location = gridLocation;
         location.y += yOffset;
         LevelRenderer.instance.player.Move(location, 3f);
+        return true;
         
-    }
-
-    private IEnumerator WaitForPlayerPosition() {
-        while (LevelRenderer.instance.player.moveTimer > 1) yield return null;
-        Vector3 location = GetComponent<BlockInfo>().gridLocation;
-        location.y += yOffset;
-        LevelRenderer.instance.player.Move(location, 3f);
     }
 }

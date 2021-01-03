@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 6668999362492686045}
   - component: {fileID: 7719961424157593976}
   - component: {fileID: 5532152394083804594}
-  - component: {fileID: 3549708413053067432}
   - component: {fileID: 3693460846256925489}
-  - component: {fileID: 997621783178267018}
   - component: {fileID: 13275199740356806}
+  - component: {fileID: 5326598889486385529}
   m_Layer: 0
   m_Name: LadderNorth
   m_TagString: Untagged
@@ -83,19 +82,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &3549708413053067432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6324983771026064487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c5a872e92eaa94da7b1b6e3d66b6a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gridLocation: {x: 0, y: 0, z: 0}
 --- !u!114 &3693460846256925489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,71 +94,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d3d95e5f46b7c54b899eabfa367d454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  faceDirection: {x: 0, y: 0, z: 0}
---- !u!114 &997621783178267018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6324983771026064487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a36b8e2aec7def439a27adaad9de05f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  northIn: 0
-  eastIn: 1
-  southIn: 1
-  westIn: 1
-  northEastIn: 0
-  southEastIn: 1
-  southWestIn: 1
-  northWestIn: 0
-  upIn: 1
-  downIn: 1
-  upNorthIn: 0
-  upEastIn: 0
-  upSouthIn: 0
-  upWestIn: 0
-  downNorthIn: 0
-  downEastIn: 0
-  downSouthIn: 0
-  downWestIn: 0
-  upNorthEastIn: 0
-  upSouthEastIn: 0
-  upSouthWestIn: 0
-  upNorthWestIn: 0
-  downNorthEastIn: 0
-  downSouthEastIn: 0
-  downSouthWestIn: 0
-  downNorthWestIn: 0
-  northOut: 0
-  eastOut: 1
-  southOut: 1
-  westOut: 1
-  northEastOut: 0
-  southEastOut: 1
-  southWestOut: 1
-  northWestOut: 0
-  upOut: 1
-  downOut: 1
-  upNorthOut: 0
-  upEastOut: 0
-  upSouthOut: 0
-  upWestOut: 0
-  downNorthOut: 0
-  downEastOut: 0
-  downSouthOut: 0
-  downWestOut: 0
-  upNorthEastOut: 0
-  upSouthEastOut: 0
-  upSouthWestOut: 0
-  upNorthWestOut: 0
-  downNorthEastOut: 0
-  downSouthEastOut: 0
-  downSouthWestOut: 0
-  downNorthWestOut: 0
+  defaultPathRules: {fileID: 11400000, guid: c83258636aef4ca48a7d5bf8d2196e43, type: 2}
+  alternatePathRules: []
+  pathfindingRules: {fileID: 0}
+  gridLocation: {x: 0, y: 0, z: 0}
+  bottomCorner: {x: 0, y: 0, z: 0}
+  topCorner: {x: 1, y: 1, z: 1}
+  faceDirection: {x: 0, y: 0, z: 1}
 --- !u!114 &13275199740356806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2107,3 +2035,16 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!114 &5326598889486385529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6324983771026064487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cd44b82cf414ad4a8544c8c188c88b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extraObjects: []

@@ -790,11 +790,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5403233119898269209}
   - component: {fileID: 1550806828324120865}
-  - component: {fileID: 482711303950597591}
   - component: {fileID: 6804748331962413228}
-  - component: {fileID: 4492357632657646616}
   - component: {fileID: 4767120270391259688}
   - component: {fileID: 929765970278167247}
+  - component: {fileID: 2260544815209892472}
   m_Layer: 0
   m_Name: leverNorth
   m_TagString: Untagged
@@ -835,19 +834,6 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!114 &482711303950597591
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4735521030286159011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c5a872e92eaa94da7b1b6e3d66b6a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gridLocation: {x: 0, y: 0, z: 0}
 --- !u!114 &6804748331962413228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -860,6 +846,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 564d7f4c826abcf458a3b1f4872b5a76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultPathRules: {fileID: 11400000, guid: ff6db468f52729847901ba54defb1d5f, type: 2}
+  alternatePathRules: []
+  pathfindingRules: {fileID: 0}
+  gridLocation: {x: 0, y: 0, z: 0}
+  bottomCorner: {x: 0, y: 0, z: 0}
+  topCorner: {x: 1, y: 1, z: 1}
   state: 0
   pivot: {fileID: 28416866329056878}
   toggleOnName: LeverDown
@@ -870,70 +862,6 @@ MonoBehaviour:
   offOffset: {x: 0, y: 0, z: 0}
   onScale: {x: 1, y: 1, z: 1}
   offScale: {x: 1, y: 1, z: 1}
---- !u!114 &4492357632657646616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4735521030286159011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a36b8e2aec7def439a27adaad9de05f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  northIn: 1
-  eastIn: 1
-  southIn: 1
-  westIn: 1
-  northEastIn: 1
-  southEastIn: 1
-  southWestIn: 1
-  northWestIn: 1
-  upIn: 1
-  downIn: 1
-  upNorthIn: 1
-  upEastIn: 1
-  upSouthIn: 1
-  upWestIn: 1
-  downNorthIn: 1
-  downEastIn: 1
-  downSouthIn: 1
-  downWestIn: 1
-  upNorthEastIn: 1
-  upSouthEastIn: 1
-  upSouthWestIn: 1
-  upNorthWestIn: 1
-  downNorthEastIn: 1
-  downSouthEastIn: 1
-  downSouthWestIn: 1
-  downNorthWestIn: 1
-  northOut: 1
-  eastOut: 1
-  southOut: 1
-  westOut: 1
-  northEastOut: 1
-  southEastOut: 1
-  southWestOut: 1
-  northWestOut: 1
-  upOut: 0
-  downOut: 1
-  upNorthOut: 0
-  upEastOut: 0
-  upSouthOut: 0
-  upWestOut: 0
-  downNorthOut: 1
-  downEastOut: 1
-  downSouthOut: 1
-  downWestOut: 1
-  upNorthEastOut: 0
-  upSouthEastOut: 0
-  upSouthWestOut: 0
-  upNorthWestOut: 0
-  downNorthEastOut: 1
-  downSouthEastOut: 1
-  downSouthWestOut: 1
-  downNorthWestOut: 1
 --- !u!65 &4767120270391259688
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -965,6 +893,20 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &2260544815209892472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4735521030286159011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cd44b82cf414ad4a8544c8c188c88b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extraObjects: []
+  toggleChildren: 0
 --- !u!1 &5114674192823231382
 GameObject:
   m_ObjectHideFlags: 0

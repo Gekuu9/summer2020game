@@ -985,11 +985,10 @@ GameObject:
   - component: {fileID: 8497904641778673587}
   - component: {fileID: 1824259165511862368}
   - component: {fileID: 3841887877354474601}
-  - component: {fileID: 4923063830258412589}
-  - component: {fileID: 1896918650568519717}
   - component: {fileID: 2714680257221052032}
   - component: {fileID: 3648511184990756278}
-  - component: {fileID: 8978568371249554773}
+  - component: {fileID: 7719319242693365072}
+  - component: {fileID: -9071994984166294340}
   m_Layer: 0
   m_Name: doorwayCubeEast
   m_TagString: Untagged
@@ -1059,33 +1058,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &4923063830258412589
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9125787716723424521}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c5a872e92eaa94da7b1b6e3d66b6a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gridLocation: {x: 0, y: 0, z: 0}
---- !u!114 &1896918650568519717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9125787716723424521}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38d3ffccf892fe04ba80392aa0260367, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movePlayerOffset: {x: 1, y: 0, z: 0}
-  nextLevelIndex: 0
 --- !u!65 &2714680257221052032
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1119,7 +1091,7 @@ MonoBehaviour:
   - {fileID: 0}
   bakeValues:
   - data: []
---- !u!114 &8978568371249554773
+--- !u!114 &7719319242693365072
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1128,58 +1100,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 9125787716723424521}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a36b8e2aec7def439a27adaad9de05f, type: 3}
+  m_Script: {fileID: 11500000, guid: f0a26d9e4dcb5214d8ce027d2bb288e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  northIn: 0
-  eastIn: 0
-  southIn: 0
-  westIn: 1
-  northEastIn: 0
-  southEastIn: 0
-  southWestIn: 0
-  northWestIn: 0
-  upIn: 0
-  downIn: 0
-  upNorthIn: 0
-  upEastIn: 0
-  upSouthIn: 0
-  upWestIn: 0
-  downNorthIn: 0
-  downEastIn: 0
-  downSouthIn: 0
-  downWestIn: 0
-  upNorthEastIn: 0
-  upSouthEastIn: 0
-  upSouthWestIn: 0
-  upNorthWestIn: 0
-  downNorthEastIn: 0
-  downSouthEastIn: 0
-  downSouthWestIn: 0
-  downNorthWestIn: 0
-  northOut: 0
-  eastOut: 0
-  southOut: 0
-  westOut: 0
-  northEastOut: 0
-  southEastOut: 0
-  southWestOut: 0
-  northWestOut: 0
-  upOut: 0
-  downOut: 0
-  upNorthOut: 0
-  upEastOut: 0
-  upSouthOut: 0
-  upWestOut: 0
-  downNorthOut: 0
-  downEastOut: 0
-  downSouthOut: 0
-  downWestOut: 0
-  upNorthEastOut: 0
-  upSouthEastOut: 0
-  upSouthWestOut: 0
-  upNorthWestOut: 0
-  downNorthEastOut: 0
-  downSouthEastOut: 0
-  downSouthWestOut: 0
-  downNorthWestOut: 0
+  defaultPathRules: {fileID: 11400000, guid: 846329746b7bc274f8eca09ed66fca54, type: 2}
+  alternatePathRules: []
+  pathfindingRules: {fileID: 0}
+  gridLocation: {x: 0, y: 0, z: 0}
+  bottomCorner: {x: 0, y: 0, z: 0}
+  topCorner: {x: 1, y: 2, z: 1}
+  movePlayerOffset: {x: 1, y: 0, z: 0}
+  nextLevelIndex: 0
+--- !u!114 &-9071994984166294340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9125787716723424521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cd44b82cf414ad4a8544c8c188c88b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extraObjects:
+  - {fileID: 1886008370652328935}

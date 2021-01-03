@@ -23,7 +23,7 @@ MonoBehaviour:
     corner1: {x: 7, y: 3, z: 4}
   decorationRects: []
   interactables:
-  - objectPrefab: {fileID: 3819211900150003413, guid: 9b30a78775c5c6b419a701386fdeef19,
+  - objectPrefab: {fileID: 3819211900150003413, guid: 88c86c7cebf7e5144a3234889b6e3475,
       type: 3}
     position: {x: 3, y: 0, z: 3}
     stateIndex: 0

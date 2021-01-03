@@ -98,7 +98,7 @@ public class Player : MonoBehaviour {
 
         if (currentPath != null && moveTimer == 0) {
             if (currentPath.next != null) {
-                currentPath.next.node.obj.GetComponent<BlockHandler>().MovePlayerHere();
+                if (!currentPath.next.node.block.MovePlayerHere()) currentPath = null;
                 if (currentPath == null) return;
                 currentPath = currentPath.next;
             } else {

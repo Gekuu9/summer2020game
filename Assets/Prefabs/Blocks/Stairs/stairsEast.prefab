@@ -11,11 +11,10 @@ GameObject:
   - component: {fileID: 89105779049290937}
   - component: {fileID: 3932569013588448028}
   - component: {fileID: 1258683422045710294}
-  - component: {fileID: 698179190238075297}
   - component: {fileID: 6333598481503916266}
   - component: {fileID: 3601637906216475339}
-  - component: {fileID: 5330054073681977071}
   - component: {fileID: 640332656975865627}
+  - component: {fileID: 7794713412657330617}
   m_Layer: 0
   m_Name: stairsEast
   m_TagString: Untagged
@@ -84,19 +83,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &698179190238075297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 754143581435495939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c5a872e92eaa94da7b1b6e3d66b6a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gridLocation: {x: 0, y: 0, z: 0}
 --- !u!114 &6333598481503916266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,6 +95,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b22fbc7b2e820df4e87d15e4c132810b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultPathRules: {fileID: 11400000, guid: f0d5a652650cd22409b7a9aff8981693, type: 2}
+  alternatePathRules: []
+  pathfindingRules: {fileID: 0}
+  gridLocation: {x: 0, y: 0, z: 0}
+  bottomCorner: {x: 0, y: 0, z: 0}
+  topCorner: {x: 1, y: 1, z: 1}
   yOffset: 0.7
 --- !u!114 &3601637906216475339
 MonoBehaviour:
@@ -350,70 +342,6 @@ MonoBehaviour:
     - {x: 0, y: -0.70710677, z: -0.70710677}
     - {x: -0.57735026, y: -0.57735026, z: 0.57735026}
     - {x: -0.57735026, y: -0.57735026, z: -0.57735026}
---- !u!114 &5330054073681977071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 754143581435495939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a36b8e2aec7def439a27adaad9de05f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  northIn: 0
-  eastIn: 0
-  southIn: 0
-  westIn: 1
-  northEastIn: 0
-  southEastIn: 0
-  southWestIn: 0
-  northWestIn: 0
-  upIn: 0
-  downIn: 0
-  upNorthIn: 0
-  upEastIn: 1
-  upSouthIn: 0
-  upWestIn: 0
-  downNorthIn: 0
-  downEastIn: 0
-  downSouthIn: 0
-  downWestIn: 1
-  upNorthEastIn: 0
-  upSouthEastIn: 0
-  upSouthWestIn: 0
-  upNorthWestIn: 0
-  downNorthEastIn: 0
-  downSouthEastIn: 0
-  downSouthWestIn: 0
-  downNorthWestIn: 0
-  northOut: 0
-  eastOut: 0
-  southOut: 0
-  westOut: 1
-  northEastOut: 0
-  southEastOut: 0
-  southWestOut: 0
-  northWestOut: 0
-  upOut: 0
-  downOut: 0
-  upNorthOut: 0
-  upEastOut: 1
-  upSouthOut: 0
-  upWestOut: 0
-  downNorthOut: 0
-  downEastOut: 0
-  downSouthOut: 0
-  downWestOut: 1
-  upNorthEastOut: 0
-  upSouthEastOut: 0
-  upSouthWestOut: 0
-  upNorthWestOut: 0
-  downNorthEastOut: 0
-  downSouthEastOut: 0
-  downSouthWestOut: 0
-  downNorthWestOut: 0
 --- !u!64 &640332656975865627
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -428,6 +356,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: 6932774a9b9c26047be7a62b2d7a43d4, type: 3}
+--- !u!114 &7794713412657330617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754143581435495939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cd44b82cf414ad4a8544c8c188c88b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extraObjects: []
 --- !u!1 &6780951688624539603
 GameObject:
   m_ObjectHideFlags: 0

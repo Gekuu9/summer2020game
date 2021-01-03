@@ -11,7 +11,7 @@ public class PushBlockSide : MonoBehaviour {
 
     private void Update() {
         if (waitingForPlayer) {
-            Vector3 location = GetComponentInParent<BlockInfo>().gridLocation - direction;
+            Vector3 location = GetComponentInParent<Block>().gridLocation - direction;
             if (LevelRenderer.instance.player.pathTargetPosition != location) {
                 waitingForPlayer = false;
             }
@@ -25,21 +25,9 @@ public class PushBlockSide : MonoBehaviour {
         }
     }
 
-    private void OnMouseEnter() {
-        if (!GetComponentInParent<PushBlock>().moving) {
-            transform.GetChild(0).gameObject.SetActive(true);
-            GetComponent<OutlineOrthoSingle>().enabled = true;
-        }
-    }
-
-    private void OnMouseExit() {
-        transform.GetChild(0).gameObject.SetActive(false);
-        GetComponent<OutlineOrthoSingle>().enabled = false;
-    }
-
     private void OnMouseOver() {
         if (Input.GetMouseButtonDown(0) && !GetComponentInParent<PushBlock>().moving) {
-            if (LevelRenderer.instance.player.gridPosition == GetComponentInParent<BlockInfo>().gridLocation - direction) {
+            if (LevelRenderer.instance.player.gridPosition == GetComponentInParent<Block>().gridLocation - direction) {
                 LevelRenderer.instance.player.TurnPlayer(direction);
                 GetComponentInParent<PushBlock>().Push(direction);
                 transform.GetChild(0).gameObject.SetActive(false);
@@ -49,15 +37,10 @@ public class PushBlockSide : MonoBehaviour {
             if (!FindPathHere()) return;
             waitingForPlayer = true;
         }
-
-        if (GetComponent<OutlineOrthoSingle>().enabled == false && !GetComponentInParent<PushBlock>().moving) {
-            transform.GetChild(0).gameObject.SetActive(true);
-            GetComponent<OutlineOrthoSingle>().enabled = true;
-        }
     }
 
     public bool FindPathHere() {
-        Vector3 location = GetComponentInParent<BlockInfo>().gridLocation - direction;
+        Vector3 location = GetComponentInParent<Block>().gridLocation - direction;
         return LevelRenderer.instance.player.PathMove(location);
     }
 

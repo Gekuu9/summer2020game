@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class ToggleDoor : Door, TriggerableObject {
 
-    public bool state;
+    public bool isOpen;
 
     public Transform[] doors;
 
     public bool isLevelTransition;
     public bool updatesSurroundingBlocks;
+
+    public string[] requiredFlagNames;
+    public bool allFlagsRequired;
 
     public string openDoorName;
     public string closeDoorName;
@@ -23,14 +26,28 @@ public class ToggleDoor : Door, TriggerableObject {
     public Vector3[] openScales;
     public Vector3[] closedScales;
 
-    public Vector3Int bottomCorner;
-    public Vector3Int topCorner;
+    public virtual void Setup(int stateIndex, Vector3Int[] targetPositions, Vector3Int cornerLocation) {
+        isOpen = stateIndex > 0;
 
-    public void Setup(int stateIndex, Vector3Int[] targetPositions, Vector3Int cornerLocation) {
-        state = stateIndex > 0;
+        foreach (string flagName in requiredFlagNames) {
+            if (SaveDataManager.instance.GetBoolFlag(flagName)) {
+                isOpen = true;
+                if (!allFlagsRequired) {
+                    break;
+                }
+            }
+            else {
+                isOpen = false;
+                if (allFlagsRequired) {
+                    break;
+                }
+            }
+        }
+
+        if (GetComponent<MeshOutline>()) GetComponent<MeshOutline>().enabled = isOpen;
 
         for (int i = 0; i < doors.Length; i++) {
-            if (state) {
+            if (isOpen) {
                 doors[i].position += openOffsets[i];
                 doors[i].localRotation = openRotations[i];
                 doors[i].localScale = openScales[i];
@@ -46,27 +63,25 @@ public class ToggleDoor : Door, TriggerableObject {
     }
 
     public void SetupPathfinding() {
-        PFRulesVariable.variantRuleset rules = GetComponent<PFRulesVariable>().variantRules[state && updatesSurroundingBlocks ? 1 : 0];
-        Vector3Int location = Vector3Int.RoundToInt(GetComponent<BlockInfo>().gridLocation);
+        Vector3Int location = Vector3Int.RoundToInt(gridLocation);
         for (int x = bottomCorner.x; x < topCorner.x; x++) {
             for (int y = bottomCorner.y; y < topCorner.y; y++) {
                 for (int z = bottomCorner.z; z < topCorner.z; z++) {
                     Vector3Int loc2 = new Vector3Int(x, y, z);
-                    GameObject obj = LevelRenderer.instance.GetObject(location + loc2);
-                    if (obj == null) continue;
-                    obj.GetComponent<PFRulesVariable>().UseRuleset(rules);
+                    Block block = LevelRenderer.instance.GetBlock(location + loc2);
+                    if (block == null) continue;
+                    block.ChangePathRules(isOpen && updatesSurroundingBlocks ? 1 : 0);
                 }
             }
         }
-        GetComponent<PFRulesVariable>().SwitchRuleset(state ? 1 : 0);
+        ChangePathRules(isOpen ? 1 : 0);
 
         for (int x = bottomCorner.x; x < topCorner.x; x++) {
             for (int y = bottomCorner.y; y < topCorner.y; y++) {
                 for (int z = bottomCorner.z; z < topCorner.z; z++) {
                     Vector3Int loc2 = new Vector3Int(x, y, z);
-                    GameObject obj = LevelRenderer.instance.GetObject(location + loc2);
-                    if (obj == null) continue;
-                    obj.GetComponent<PFRulesVariable>().UpdatePFGraph();
+                    Block block = LevelRenderer.instance.GetBlock(location + loc2);
+                    if (block == null) continue;
                 }
             }
         }
@@ -75,13 +90,12 @@ public class ToggleDoor : Door, TriggerableObject {
     public void UpdatePathfinding() {
         if (updatesSurroundingBlocks) SetupPathfinding();
         else {
-            GetComponent<PFRulesVariable>().SwitchRuleset(state ? 1 : 0);
-            GetComponent<PFRulesVariable>().UpdatePFGraph();
+            ChangePathRules(isOpen ? 1 : 0);
         }
     }
 
     public void PlayAnimation() {
-        if (state) {
+        if (isOpen) {
             GetComponent<Animation>().Play(openDoorName);
             transform.Find("SoundManager").GetComponent<AudioSource>().Play();
         }
@@ -92,7 +106,8 @@ public class ToggleDoor : Door, TriggerableObject {
     }
 
     public void Trigger() {
-        state = !state;
+        isOpen = !isOpen;
+        if (GetComponent<MeshOutline>()) GetComponent<MeshOutline>().enabled = isOpen;
         PlayAnimation();
         UpdatePathfinding();
     }
@@ -111,41 +126,26 @@ public class ToggleDoor : Door, TriggerableObject {
         */
     }
 
-    private void OnMouseEnter() {
-        if (GetComponentInChildren<OutlineOrtho>() == null) return;
-        if (state) {
-            GetComponentInChildren<OutlineOrtho>().enabled = true;
-        }
-    }
-
-    private void OnMouseExit() {
-        if (GetComponentInChildren<OutlineOrtho>() == null) return;
-        GetComponentInChildren<OutlineOrtho>().enabled = false;
-    }
-
-    private void OnEnable() {
-        if (GetComponentInChildren<OutlineOrtho>() == null) return;
-        GetComponentInChildren<OutlineOrtho>().enabled = false;
-    }
-
     private void OnMouseOver() {
-        if (Input.GetMouseButtonDown(0) && state) {
+        if (Input.GetMouseButtonDown(0) && isOpen) {
             FindPathHere();
         }
     }
 
-    public override void MovePlayerHere() {
-        if (state) {
-            Vector3 location = GetComponent<BlockInfo>().gridLocation;
+    public override bool MovePlayerHere() {
+        if (isOpen) {
+            Vector3 location = gridLocation;
             LevelRenderer.instance.player.Move(location + movePlayerOffset, 3f);
             if (isLevelTransition)
                 LevelRenderer.instance.LevelTransition(nextLevelIndex);
+            return true;
         }
+        return false;
     }
 
     public override bool FindPathHere() {
-        if (state) {
-            Vector3 location = GetComponent<BlockInfo>().gridLocation;
+        if (isOpen) {
+            Vector3 location = gridLocation;
             return LevelRenderer.instance.player.PathMove(location);
         } else {
             return false;

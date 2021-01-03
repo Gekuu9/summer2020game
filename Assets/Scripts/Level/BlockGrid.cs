@@ -7,7 +7,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName ="ScriptableObjects/BlockGrid")]
 public class BlockGrid : ScriptableObject {
 
-    public enum BlockType {
+    public enum StandardBlockType {
         Empty,
         Surface,
         Floor,
@@ -42,7 +42,7 @@ public class BlockGrid : ScriptableObject {
 
     [System.Serializable]
     public class BlockRect {
-        public BlockType blockType;
+        public StandardBlockType blockType;
         public int prefabSetNumber;
         public Vector3 corner0;
         public Vector3 corner1;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ladder : BlockHandler {
+public class Ladder : Block {
 
     public Vector3 faceDirection;
 
@@ -16,26 +16,13 @@ public class Ladder : BlockHandler {
         }
     }
 
-    private void OnMouseEnter() {
-        GetComponent<OutlineOrthoSingle>().enabled = true;
-    }
-
-    private void OnMouseExit() {
-        GetComponent<OutlineOrthoSingle>().enabled = false;
-    }
-
-    private void OnEnable() {
-        GetComponent<OutlineOrthoSingle>().enabled = false;
-    }
-
     public override bool FindPathHere() {
-        Vector3 location = GetComponent<BlockInfo>().gridLocation;
-        return LevelRenderer.instance.player.PathMove(location);
+        return LevelRenderer.instance.player.PathMove(gridLocation);
     }
 
-    public override void MovePlayerHere() {
-        Vector3 location = GetComponent<BlockInfo>().gridLocation;
-        LevelRenderer.instance.player.Move(location, 2f, false);
-        if (LevelRenderer.instance.player.gridPosition.y < location.y) LevelRenderer.instance.player.TurnPlayer(faceDirection);
+    public override bool MovePlayerHere() {
+        LevelRenderer.instance.player.Move(gridLocation, 2f, false);
+        if (LevelRenderer.instance.player.gridPosition.y < gridLocation.y) LevelRenderer.instance.player.TurnPlayer(faceDirection);
+        return true;
     }
 }

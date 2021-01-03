@@ -4,7 +4,7 @@ using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AltarTrigger : MultiBlockHandler, InteractableObject {
+public class AltarTrigger : Block, InteractableObject {
 
     public Transform sphere;
     public bool oneTimeTrigger;
@@ -27,9 +27,23 @@ public class AltarTrigger : MultiBlockHandler, InteractableObject {
 
     private bool waitingForPlayer;
 
+    private List<Vector3Int> gridLocations;
+
     private void Start() {
-        SetupMultiBlock();
         LevelRenderer.instance.player.onFindNewPath += stopWaiting;
+
+        gridLocations = new List<Vector3Int>();
+        for (int x = gridLocation.x + bottomCorner.x; x < gridLocation.x + topCorner.x; x++) {
+            for (int y = gridLocation.y + bottomCorner.y; y < gridLocation.y + topCorner.y; y++) {
+                for (int z = gridLocation.z + bottomCorner.z; z < gridLocation.z + topCorner.z; z++) {
+                    gridLocations.Add(new Vector3Int(x, y, z));
+                }
+            }
+        }
+    }
+
+    private void OnEnable() {
+        GetComponent<Animator>().SetBool("Active", state);
     }
 
     public virtual void Setup(int stateIndex, Vector3Int[] targetPositions, Vector3Int cornerLocation) {
@@ -45,18 +59,40 @@ public class AltarTrigger : MultiBlockHandler, InteractableObject {
 
         targets = new TriggerableObject[targetPositions.Length];
         for (int i = 0; i < targetPositions.Length; i++) {
-            targets[i] = LevelRenderer.instance.GetObject(targetPositions[i] + cornerLocation).GetComponent<TriggerableObject>();
+            targets[i] = LevelRenderer.instance.GetBlock(targetPositions[i] + cornerLocation).GetComponent<TriggerableObject>();
         }
     }
 
-    public override void MovePlayerHere() {
-        Vector3 location = GetComponent<BlockInfo>().gridLocation;
-        LevelRenderer.instance.player.Move(location, 3f);
+    public Vector3Int FindClosestLocation(Vector3Int pos) {
+        if (gridLocations == null) return gridLocation;
+        Vector3Int minLoc = bottomCorner + gridLocation;
+        foreach (Vector3Int loc in gridLocations) {
+            if (Vector3Int.Distance(minLoc, pos) > Vector3Int.Distance(loc, pos)) {
+                minLoc = loc;
+            }
+        }
+        return minLoc;
+    }
+
+    public Vector3Int FindClosestLocation() {
+        if (gridLocations == null) return gridLocation;
+        Vector3Int minLoc = bottomCorner + gridLocation;
+        Vector3Int pos = Vector3Int.RoundToInt(LevelRenderer.instance.player.gridPosition);
+        foreach (Vector3Int loc in gridLocations) {
+            if (Vector3Int.Distance(minLoc, pos) > Vector3Int.Distance(loc, pos)) {
+                minLoc = loc;
+            }
+        }
+        return minLoc;
+    }
+
+    public override bool MovePlayerHere() {
+        LevelRenderer.instance.player.Move(FindClosestLocation(), 3f);
+        return true;
     }
 
     public override bool FindPathHere() {
-        Vector3 location = GetComponent<BlockInfo>().gridLocation;
-        return LevelRenderer.instance.player.PathMove(location, true);
+        return LevelRenderer.instance.player.PathMove(FindClosestLocation(), true);
     }
 
     public virtual void Trigger() {
@@ -64,6 +100,7 @@ public class AltarTrigger : MultiBlockHandler, InteractableObject {
             triggered = true;
             state = !state;
             playSound = true;
+            if (oneTimeTrigger) GetComponent<MeshOutline>().enabled = false;
 
             if (state) GetComponent<Animator>().SetTrigger("Activate");
             else GetComponent<Animator>().SetTrigger("Deactivate");
@@ -78,8 +115,8 @@ public class AltarTrigger : MultiBlockHandler, InteractableObject {
 
     private void OnMouseOver() {
         if (Input.GetMouseButtonDown(0) && ((!oneTimeTrigger) || (oneTimeTrigger && !triggered))) {
-            if (Vector3.Distance(LevelRenderer.instance.player.gridPosition, GetComponent<BlockInfo>().gridLocation) <= 1) {
-                LevelRenderer.instance.player.TurnPlayer(GetComponent<BlockInfo>().gridLocation - LevelRenderer.instance.player.gridPosition);
+            if (Vector3.Distance(LevelRenderer.instance.player.gridPosition, FindClosestLocation()) <= 1) {
+                LevelRenderer.instance.player.TurnPlayer(FindClosestLocation() - LevelRenderer.instance.player.gridPosition);
                 Trigger();
                 return;
             }
@@ -105,9 +142,9 @@ public class AltarTrigger : MultiBlockHandler, InteractableObject {
         }
 
         if (waitingForPlayer) {
-            if (Vector3.Distance(LevelRenderer.instance.player.gridPosition, GetComponent<BlockInfo>().gridLocation) <= 2 && LevelRenderer.instance.player.moveVelocity == Vector3.zero) {
+            if (Vector3.Distance(LevelRenderer.instance.player.gridPosition, FindClosestLocation()) <= 1 && LevelRenderer.instance.player.moveVelocity == Vector3.zero) {
                 waitingForPlayer = false;
-                LevelRenderer.instance.player.TurnPlayer(GetComponent<BlockInfo>().gridLocation - LevelRenderer.instance.player.gridPosition);
+                LevelRenderer.instance.player.TurnPlayer(FindClosestLocation() - LevelRenderer.instance.player.gridPosition);
                 Trigger();
             }
         }
@@ -115,23 +152,5 @@ public class AltarTrigger : MultiBlockHandler, InteractableObject {
 
     private void stopWaiting() {
         waitingForPlayer = false;
-    }
-
-    private void OnMouseEnter() {
-        foreach (OutlineOrthoSingle item in GetComponentsInChildren<OutlineOrthoSingle>()) {
-            if ((!oneTimeTrigger) || (oneTimeTrigger && !triggered)) item.enabled = true;
-        }
-    }
-
-    private void OnMouseExit() {
-        foreach (OutlineOrthoSingle item in GetComponentsInChildren<OutlineOrthoSingle>()) {
-            if ((!oneTimeTrigger) || (oneTimeTrigger && !triggered)) item.enabled = false;
-        }
-    }
-
-    private void OnEnable() {
-        foreach (OutlineOrthoSingle item in GetComponentsInChildren<OutlineOrthoSingle>()) {
-            if ((!oneTimeTrigger) || (oneTimeTrigger && !triggered)) item.enabled = false;
-        }
     }
 }

@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.047169805, g: 0.044176374, b: 0.043832317, a: 1}
+  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
   m_AmbientEquatorColor: {r: 0, g: 0, b: 0, a: 1}
   m_AmbientGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_AmbientIntensity: 1
@@ -301,6 +301,7 @@ GameObject:
   - component: {fileID: 541052723}
   - component: {fileID: 541052722}
   - component: {fileID: 541052726}
+  - component: {fileID: 541052727}
   m_Layer: 5
   m_Name: UICanvas
   m_TagString: Untagged
@@ -402,7 +403,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeSpeed: 5
   fadeImage: {fileID: 2135115501}
-  fading: 0
+  status: 0
+--- !u!114 &541052727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541052721}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3db84ef07e0d39a438f38c19c2b51618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &615528484
 GameObject:
   m_ObjectHideFlags: 3
@@ -572,7 +585,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2071566352}
-  levelPrefab: {fileID: 1384550825842115242, guid: 5a4edcd7af838f349b2abaca27d283da,
+  levelPrefab: {fileID: 8878762766787603674, guid: ff6da63b2efe5cf4e9b773c6a8198f46,
     type: 3}
   mainUICanvas: {fileID: 541052726}
   currentLevelPrefab: {fileID: 0}
@@ -942,17 +955,17 @@ PrefabInstance:
     - target: {fileID: 203260152622156711, guid: 602db620b2887ef46ad5342d04004866,
         type: 3}
       propertyPath: startingPosition.x
-      value: 7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 203260152622156711, guid: 602db620b2887ef46ad5342d04004866,
         type: 3}
       propertyPath: startingPosition.y
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 203260152622156711, guid: 602db620b2887ef46ad5342d04004866,
         type: 3}
       propertyPath: startingPosition.z
-      value: 8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 203260152622156728, guid: 602db620b2887ef46ad5342d04004866,
         type: 3}

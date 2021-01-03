@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Cinemachine.Editor;
 using UnityEngine;
 
-public class ToggleBlock : BlockHandler, TriggerableObject {
+public class ToggleBlock : Block, TriggerableObject {
 
     public bool state;
 
-    public Transform movingBlock;
+    public GameObject movingBlock;
 
     public string toggleOnName;
     public string toggleOffName;
@@ -28,39 +29,42 @@ public class ToggleBlock : BlockHandler, TriggerableObject {
         state = stateIndex > 0;
 
         if (state) {
-            movingBlock.position += onOffset;
-            movingBlock.rotation = onRotation;
-            movingBlock.localScale = onScale;
+            movingBlock.transform.position += onOffset;
+            movingBlock.transform.rotation = onRotation;
+            movingBlock.transform.localScale = onScale;
         }
         else {
-            movingBlock.position += offOffset;
-            movingBlock.rotation = offRotation;
-            movingBlock.localScale = offScale;
+            movingBlock.transform.position += offOffset;
+            movingBlock.transform.rotation = offRotation;
+            movingBlock.transform.localScale = offScale;
         }
 
         UpdatePathfinding();
     }
 
     public void UpdatePathfinding() {
-        GetComponent<PFRulesVariable>().SwitchRuleset(state ? 1 : 0);
-        Vector3Int location = Vector3Int.RoundToInt(GetComponent<BlockInfo>().gridLocation);
+        ChangePathRules(state ? 1 : 0);
+        Vector3Int location = Vector3Int.RoundToInt(gridLocation);
         if (location.y + 1 < LevelRenderer.instance.levelObject.ySize) {
             location.y += 1;
-            GameObject aboveObj = LevelRenderer.instance.GetObject(location);
-            if (aboveObj.GetComponent<Empty>()) {
-                aboveObj.GetComponent<Empty>().UpdatePathfinding();
-                aboveObj.GetComponent<PFRulesVariable>().UpdatePFGraph();
+            Block aboveBlock = LevelRenderer.instance.GetBlock(location);
+            if (aboveBlock.GetComponent<Empty>()) {
+                aboveBlock.GetComponent<Empty>().UpdatePathfinding();
+                LevelRenderer.instance.levelObject.pathfindingGraph.UpdateNode(location);
             }
         }
-        GetComponent<PFRulesVariable>().UpdatePFGraph();
+        GetComponent<BoxCollider>().enabled = state;
+        foreach (BoxCollider c in GetComponentsInChildren<BoxCollider>()) c.enabled = state;
     }
 
     public void PlayAnimation() {
         if (state) {
-            GetComponent<Animation>().Play(toggleOnName);
+            iTween.MoveTo(movingBlock, gridLocation + onOffset, 2f);
+            iTween.ScaleTo(movingBlock, onScale, 2f);
         }
         else {
-            GetComponent<Animation>().Play(toggleOffName);
+            iTween.MoveTo(movingBlock, gridLocation + offOffset, 2f);
+            iTween.ScaleTo(movingBlock, offScale, 2f);
         }
     }
 
@@ -70,25 +74,30 @@ public class ToggleBlock : BlockHandler, TriggerableObject {
         UpdatePathfinding();
     }
 
-    public override void MovePlayerHere() {
+    private void OnMouseOver() {
+        if (Input.GetMouseButtonDown(0)) {
+            FindPathHere();
+        }
+    }
+
+    public override bool MovePlayerHere() {
         if (!state) {
-            Vector3 location = GetComponent<BlockInfo>().gridLocation;
+            Vector3 location = gridLocation;
             LevelRenderer.instance.player.Move(location, 3f);
+            return true;
         } else {
-            Vector3Int position = Vector3Int.RoundToInt(GetComponent<BlockInfo>().gridLocation);
-            position.y += 1;
-            LevelRenderer.instance.GetObject(position).GetComponent<BlockHandler>().FindPathHere();
+            return false;
         }
     }
 
     public override bool FindPathHere() {
         if (!state) {
-            Vector3 location = GetComponent<BlockInfo>().gridLocation;
+            Vector3 location = gridLocation;
             return LevelRenderer.instance.player.PathMove(location);
         } else {
-            Vector3Int position = Vector3Int.RoundToInt(GetComponent<BlockInfo>().gridLocation);
+            Vector3Int position = Vector3Int.RoundToInt(gridLocation);
             position.y += 1;
-            return LevelRenderer.instance.GetObject(position).GetComponent<BlockHandler>().FindPathHere();
+            return LevelRenderer.instance.GetBlock(position).FindPathHere();
         }
     }
 }

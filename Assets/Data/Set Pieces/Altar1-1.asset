@@ -109,7 +109,7 @@ MonoBehaviour:
     prefabSetNumber: 0
     corner0: {x: 6, y: 2, z: 2}
     corner1: {x: 7, y: 3, z: 3}
-  - blockType: 2
+  - blockType: 3
     prefabSetNumber: 0
     corner0: {x: 3, y: 2, z: 3}
     corner1: {x: 6, y: 3, z: 6}

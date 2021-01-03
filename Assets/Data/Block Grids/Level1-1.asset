@@ -357,6 +357,14 @@ MonoBehaviour:
     decorationSetNumber: 3
     corner0: {x: 15, y: 0, z: 8}
     corner1: {x: 16, y: 1, z: 10}
+  - decorationIndex: 20
+    decorationSetNumber: 2
+    corner0: {x: 6, y: 9, z: 16}
+    corner1: {x: 16, y: 10, z: 17}
+  - decorationIndex: 21
+    decorationSetNumber: 2
+    corner0: {x: 16, y: 9, z: 6}
+    corner1: {x: 17, y: 10, z: 16}
   setPieces:
   - setPiece: {fileID: 11400000, guid: b629408d202289c4b9823326c81473f1, type: 2}
     cornerLocation: {x: 4, y: 1, z: 4}

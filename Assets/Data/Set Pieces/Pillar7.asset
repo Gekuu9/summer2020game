@@ -15,15 +15,15 @@ MonoBehaviour:
   blockRects: []
   decorationRects:
   - decorationIndex: 5
-    decorationSetNumber: 2
+    decorationSetNumber: 1
     corner0: {x: 0, y: 0, z: 0}
     corner1: {x: 1, y: 1, z: 1}
   - decorationIndex: 6
-    decorationSetNumber: 2
+    decorationSetNumber: 1
     corner0: {x: 0, y: 1, z: 0}
     corner1: {x: 1, y: 6, z: 1}
   - decorationIndex: 7
-    decorationSetNumber: 2
+    decorationSetNumber: 1
     corner0: {x: 0, y: 6, z: 0}
     corner1: {x: 1, y: 7, z: 1}
   interactables: []

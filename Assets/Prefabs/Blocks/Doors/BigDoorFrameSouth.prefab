@@ -87,14 +87,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5123089868975376076}
-  - component: {fileID: 6552004511438976736}
   - component: {fileID: 911996049174479986}
-  - component: {fileID: 8404067821623783986}
   - component: {fileID: 3323852988010348689}
   - component: {fileID: 8411253181601355984}
   - component: {fileID: 8304010122863592515}
-  - component: {fileID: 3138960125450948267}
   - component: {fileID: 6141351387700420539}
+  - component: {fileID: 3456121866911584896}
+  - component: {fileID: 1501304709677633679}
   m_Layer: 0
   m_Name: BigDoorFrameSouth
   m_TagString: Untagged
@@ -118,19 +117,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 270, z: 0}
---- !u!114 &6552004511438976736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5499756866489441398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c5a872e92eaa94da7b1b6e3d66b6a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gridLocation: {x: 0, y: 0, z: 0}
 --- !u!65 &911996049174479986
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -144,20 +130,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 3.0000007, z: 3.0000007}
   m_Center: {x: 0, y: 0, z: 1.5000004}
---- !u!114 &8404067821623783986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5499756866489441398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38d3ffccf892fe04ba80392aa0260367, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movePlayerOffset: {x: 0, y: 0, z: -1}
-  nextLevelIndex: 0
 --- !u!33 &3323852988010348689
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -591,70 +563,6 @@ MonoBehaviour:
     - {x: 0.70710677, y: -0.70710677, z: 0}
     - {x: 0.57735026, y: 0.57735026, z: -0.57735026}
     - {x: 0.57735026, y: -0.57735026, z: -0.57735026}
---- !u!114 &3138960125450948267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5499756866489441398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a36b8e2aec7def439a27adaad9de05f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  northIn: 1
-  eastIn: 0
-  southIn: 0
-  westIn: 0
-  northEastIn: 1
-  southEastIn: 1
-  southWestIn: 0
-  northWestIn: 0
-  upIn: 0
-  downIn: 0
-  upNorthIn: 0
-  upEastIn: 0
-  upSouthIn: 0
-  upWestIn: 0
-  downNorthIn: 0
-  downEastIn: 0
-  downSouthIn: 0
-  downWestIn: 0
-  upNorthEastIn: 0
-  upSouthEastIn: 0
-  upSouthWestIn: 0
-  upNorthWestIn: 0
-  downNorthEastIn: 0
-  downSouthEastIn: 0
-  downSouthWestIn: 0
-  downNorthWestIn: 0
-  northOut: 0
-  eastOut: 0
-  southOut: 0
-  westOut: 0
-  northEastOut: 0
-  southEastOut: 0
-  southWestOut: 0
-  northWestOut: 0
-  upOut: 0
-  downOut: 0
-  upNorthOut: 0
-  upEastOut: 0
-  upSouthOut: 0
-  upWestOut: 0
-  downNorthOut: 0
-  downEastOut: 0
-  downSouthOut: 0
-  downWestOut: 0
-  upNorthEastOut: 0
-  upSouthEastOut: 0
-  upSouthWestOut: 0
-  upNorthWestOut: 0
-  downNorthEastOut: 0
-  downSouthEastOut: 0
-  downSouthWestOut: 0
-  downNorthWestOut: 0
 --- !u!114 &6141351387700420539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2252,6 +2160,40 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!114 &3456121866911584896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5499756866489441398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0a26d9e4dcb5214d8ce027d2bb288e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultPathRules: {fileID: 11400000, guid: 3e9a6d0e627875044828fe708feb0ab4, type: 2}
+  alternatePathRules: []
+  pathfindingRules: {fileID: 0}
+  gridLocation: {x: 0, y: 0, z: 0}
+  bottomCorner: {x: -1, y: 0, z: 0}
+  topCorner: {x: 2, y: 3, z: 1}
+  movePlayerOffset: {x: 0, y: 0, z: -1}
+  nextLevelIndex: 0
+--- !u!114 &1501304709677633679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5499756866489441398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cd44b82cf414ad4a8544c8c188c88b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extraObjects:
+  - {fileID: 8920942324111445254}
 --- !u!1 &8920942324111445254
 GameObject:
   m_ObjectHideFlags: 0

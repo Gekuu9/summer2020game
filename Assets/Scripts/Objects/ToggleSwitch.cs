@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ToggleSwitch : BlockHandler, InteractableObject {
+public class ToggleSwitch : Block, InteractableObject {
 
     public TriggerableObject[] targets;
     public bool state;
@@ -35,24 +35,20 @@ public class ToggleSwitch : BlockHandler, InteractableObject {
 
     private void Update() {
         if (waitingForPlayer) {
-            if (LevelRenderer.instance.player.pathTargetPosition != GetComponent<BlockInfo>().gridLocation) {
+            if (LevelRenderer.instance.player.pathTargetPosition != gridLocation) {
                 waitingForPlayer = false;
-            } else if (LevelRenderer.instance.player.gridPosition == GetComponent<BlockInfo>().gridLocation) {
+            } else if (LevelRenderer.instance.player.gridPosition == gridLocation) {
                 waitingForPlayer = false;
                 Toggle();
             }
         }
     }
 
-    private void OnEnable() {
-        GetComponent<OutlineOrtho>().enabled = false;
-    }
-
     public void Setup(int stateIndex, Vector3Int[] targetPositions, Vector3Int cornerLocation) {
         state = stateIndex > 0;
         targets = new TriggerableObject[targetPositions.Length];
         for (int i = 0; i < targetPositions.Length; i++) {
-            targets[i] = LevelRenderer.instance.GetObject(targetPositions[i] + cornerLocation).GetComponent<TriggerableObject>();
+            targets[i] = LevelRenderer.instance.GetBlock(targetPositions[i] + cornerLocation).GetComponent<TriggerableObject>();
         }
 
         if (state) {
@@ -81,21 +77,14 @@ public class ToggleSwitch : BlockHandler, InteractableObject {
         }
     }
 
-    private void OnMouseEnter() {
-        GetComponent<OutlineOrtho>().enabled = true;
-    }
-
-    private void OnMouseExit() {
-        GetComponent<OutlineOrtho>().enabled = false;
-    }
-
-    public override void MovePlayerHere() {
-        Vector3 location = GetComponent<BlockInfo>().gridLocation;
+    public override bool MovePlayerHere() {
+        Vector3 location = gridLocation;
         LevelRenderer.instance.player.Move(location, 3f);
+        return true;
     }
 
     public override bool FindPathHere() {
-        Vector3 location = GetComponent<BlockInfo>().gridLocation;
+        Vector3 location = gridLocation;
         return LevelRenderer.instance.player.PathMove(location);
     }
 }

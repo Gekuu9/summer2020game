@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 824956d34cb4b2d4e8642850f5aafd8a, type: 3}
   m_Name: Level1-4-1
   m_EditorClassIdentifier: 
-  xSize: 11
+  xSize: 13
   ySize: 10
   zSize: 11
   blockRects:
@@ -27,7 +27,7 @@ MonoBehaviour:
   - blockType: 5
     prefabSetNumber: 0
     corner0: {x: 10, y: 1, z: 1}
-    corner1: {x: 11, y: 9, z: 10}
+    corner1: {x: 11, y: 5, z: 10}
   - blockType: 6
     prefabSetNumber: 0
     corner0: {x: 1, y: 1, z: 0}
@@ -70,21 +70,25 @@ MonoBehaviour:
     corner1: {x: 10, y: 2, z: 4}
   - blockType: 3
     prefabSetNumber: 0
-    corner0: {x: 8, y: 5, z: 1}
-    corner1: {x: 10, y: 6, z: 2}
-  - blockType: 3
+    corner0: {x: 10, y: 1, z: 1}
+    corner1: {x: 12, y: 6, z: 10}
+  - blockType: 4
     prefabSetNumber: 0
-    corner0: {x: 8, y: 5, z: 2}
-    corner1: {x: 9, y: 6, z: 3}
-  - blockType: 3
+    corner0: {x: 10, y: 6, z: 10}
+    corner1: {x: 12, y: 9, z: 11}
+  - blockType: 6
     prefabSetNumber: 0
-    corner0: {x: 8, y: 5, z: 3}
-    corner1: {x: 10, y: 6, z: 10}
+    corner0: {x: 10, y: 6, z: 0}
+    corner1: {x: 12, y: 9, z: 1}
+  - blockType: 5
+    prefabSetNumber: 0
+    corner0: {x: 12, y: 6, z: 1}
+    corner1: {x: 13, y: 9, z: 10}
   decorationRects:
   - decorationIndex: 0
     decorationSetNumber: 0
-    corner0: {x: 4, y: 0, z: 7}
-    corner1: {x: 7, y: 1, z: 9}
+    corner0: {x: 3, y: 0, z: 6}
+    corner1: {x: 8, y: 1, z: 9}
   - decorationIndex: 0
     decorationSetNumber: 0
     corner0: {x: 5, y: 0, z: 9}
@@ -96,19 +100,47 @@ MonoBehaviour:
   - decorationIndex: 20
     decorationSetNumber: 2
     corner0: {x: 1, y: 9, z: 10}
-    corner1: {x: 10, y: 10, z: 11}
+    corner1: {x: 12, y: 10, z: 11}
   - decorationIndex: 21
     decorationSetNumber: 2
-    corner0: {x: 10, y: 9, z: 1}
-    corner1: {x: 11, y: 10, z: 10}
+    corner0: {x: 12, y: 9, z: 1}
+    corner1: {x: 13, y: 10, z: 10}
   - decorationIndex: 22
     decorationSetNumber: 2
     corner0: {x: 1, y: 9, z: 0}
-    corner1: {x: 10, y: 10, z: 1}
+    corner1: {x: 12, y: 10, z: 1}
   - decorationIndex: 23
     decorationSetNumber: 2
     corner0: {x: 0, y: 9, z: 1}
     corner1: {x: 1, y: 10, z: 10}
+  - decorationIndex: 3
+    decorationSetNumber: 3
+    corner0: {x: 9, y: 3, z: 7}
+    corner1: {x: 10, y: 4, z: 8}
+  - decorationIndex: 3
+    decorationSetNumber: 3
+    corner0: {x: 9, y: 3, z: 3}
+    corner1: {x: 10, y: 4, z: 4}
+  - decorationIndex: 2
+    decorationSetNumber: 3
+    corner0: {x: 7, y: 3, z: 9}
+    corner1: {x: 8, y: 4, z: 10}
+  - decorationIndex: 2
+    decorationSetNumber: 3
+    corner0: {x: 3, y: 3, z: 9}
+    corner1: {x: 4, y: 4, z: 10}
+  - decorationIndex: 3
+    decorationSetNumber: 3
+    corner0: {x: 11, y: 7, z: 4}
+    corner1: {x: 12, y: 8, z: 5}
+  - decorationIndex: 4
+    decorationSetNumber: 3
+    corner0: {x: 7, y: 3, z: 1}
+    corner1: {x: 8, y: 4, z: 2}
+  - decorationIndex: 4
+    decorationSetNumber: 3
+    corner0: {x: 3, y: 3, z: 1}
+    corner1: {x: 4, y: 4, z: 2}
   setPieces: []
   interactables:
   - objectPrefab: {fileID: 374966969721028058, guid: 44319e6704434ef4b9ca518cd9a23b19,
@@ -134,6 +166,6 @@ MonoBehaviour:
     targetPositions: []
   - objectPrefab: {fileID: 4247742636557137008, guid: 8f2adc7a9bb7c9848b778aa55d6f35a9,
       type: 3}
-    position: {x: 8, y: 6, z: 8}
+    position: {x: 10, y: 6, z: 8}
     stateIndex: 1
     targetPositions: []

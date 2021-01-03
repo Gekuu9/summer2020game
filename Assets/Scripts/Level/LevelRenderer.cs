@@ -40,7 +40,7 @@ public class LevelRenderer : MonoBehaviour {
         IEnumerator coroutine = LoadAdjacentLevels();
         StartCoroutine(coroutine);
 
-        coroutine = mainUICanvas.LevelFadeIn(0.01f);
+        coroutine = mainUICanvas.LevelFadeInLinear(3f);
         StartCoroutine(coroutine);
     }
 
@@ -117,7 +117,7 @@ public class LevelRenderer : MonoBehaviour {
     
     private IEnumerator LevelFade(int levelIndex) {
         // If the screen is already fading in or out, wait until it's done to fade again
-        while (mainUICanvas.fading) yield return null;
+        while (mainUICanvas.status != MainUI.FadeStatus.clear) yield return null;
 
         IEnumerator coroutine = mainUICanvas.LevelFadeOut();
         StartCoroutine(coroutine);
@@ -130,7 +130,7 @@ public class LevelRenderer : MonoBehaviour {
         }
 
         // Wait for the level to fade out completely
-        while (mainUICanvas.fading) yield return null;
+        while (mainUICanvas.status != MainUI.FadeStatus.black) yield return null;
 
         // Load next level, then let one frame pass to allow start functions to run
         LoadNextLevel(levelIndex);
@@ -172,11 +172,15 @@ public class LevelRenderer : MonoBehaviour {
     }
 
     // Get the block gameobject at the specified location on the active level grid
-    public GameObject GetObject(Vector3Int location) {
-        return levelObject.GetObject(location);
+    public Block GetBlock(Vector3Int location) {
+        return levelObject.GetBlock(location);
     }
 
-    public void SwapObjects(Vector3Int location1, Vector3Int location2) {
+    public void MoveBlock(Vector3Int oldPos, Vector3Int newPos) {
+        levelObject.MoveBlock(oldPos, newPos);
+    }
+
+    public void SwapBlocks(Vector3Int location1, Vector3Int location2) {
         levelObject.SwapObjects(location1, location2);
     }
 }

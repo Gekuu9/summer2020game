@@ -985,11 +985,10 @@ GameObject:
   - component: {fileID: 8497904641778673587}
   - component: {fileID: 8749042916571650859}
   - component: {fileID: 4087038781221703123}
-  - component: {fileID: 4923063830258412589}
   - component: {fileID: 2714680257221052032}
   - component: {fileID: 3648511184990756278}
-  - component: {fileID: 3979839145040133287}
-  - component: {fileID: -6802268678921734186}
+  - component: {fileID: 560512783862461048}
+  - component: {fileID: -2169978164938543609}
   m_Layer: 0
   m_Name: doorwayCubeNorth
   m_TagString: Untagged
@@ -1059,19 +1058,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &4923063830258412589
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9125787716723424521}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c5a872e92eaa94da7b1b6e3d66b6a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gridLocation: {x: 0, y: 0, z: 0}
 --- !u!65 &2714680257221052032
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1209,7 +1195,7 @@ MonoBehaviour:
     - {x: -0.30151135, y: -0.904534, z: -0.30151135}
     - {x: -0.30151135, y: 0.904534, z: -0.30151135}
     - {x: -0.57735026, y: 0.57735026, z: -0.57735026}
---- !u!114 &3979839145040133287
+--- !u!114 &560512783862461048
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1218,12 +1204,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 9125787716723424521}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38d3ffccf892fe04ba80392aa0260367, type: 3}
+  m_Script: {fileID: 11500000, guid: f0a26d9e4dcb5214d8ce027d2bb288e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultPathRules: {fileID: 11400000, guid: 3c79204dd692cab4db8eb752c85d180e, type: 2}
+  alternatePathRules: []
+  pathfindingRules: {fileID: 0}
+  gridLocation: {x: 0, y: 0, z: 0}
+  bottomCorner: {x: 0, y: 0, z: 0}
+  topCorner: {x: 1, y: 2, z: 1}
   movePlayerOffset: {x: 0, y: 0, z: 1}
   nextLevelIndex: 0
---- !u!114 &-6802268678921734186
+--- !u!114 &-2169978164938543609
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1232,58 +1224,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 9125787716723424521}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a36b8e2aec7def439a27adaad9de05f, type: 3}
+  m_Script: {fileID: 11500000, guid: 2cd44b82cf414ad4a8544c8c188c88b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  northIn: 0
-  eastIn: 0
-  southIn: 1
-  westIn: 0
-  northEastIn: 0
-  southEastIn: 0
-  southWestIn: 0
-  northWestIn: 0
-  upIn: 0
-  downIn: 0
-  upNorthIn: 0
-  upEastIn: 0
-  upSouthIn: 0
-  upWestIn: 0
-  downNorthIn: 0
-  downEastIn: 0
-  downSouthIn: 0
-  downWestIn: 0
-  upNorthEastIn: 0
-  upSouthEastIn: 0
-  upSouthWestIn: 0
-  upNorthWestIn: 0
-  downNorthEastIn: 0
-  downSouthEastIn: 0
-  downSouthWestIn: 0
-  downNorthWestIn: 0
-  northOut: 0
-  eastOut: 0
-  southOut: 0
-  westOut: 0
-  northEastOut: 0
-  southEastOut: 0
-  southWestOut: 0
-  northWestOut: 0
-  upOut: 0
-  downOut: 0
-  upNorthOut: 0
-  upEastOut: 0
-  upSouthOut: 0
-  upWestOut: 0
-  downNorthOut: 0
-  downEastOut: 0
-  downSouthOut: 0
-  downWestOut: 0
-  upNorthEastOut: 0
-  upSouthEastOut: 0
-  upSouthWestOut: 0
-  upNorthWestOut: 0
-  downNorthEastOut: 0
-  downSouthEastOut: 0
-  downSouthWestOut: 0
-  downNorthWestOut: 0
+  extraObjects:
+  - {fileID: 1745794515801894302}

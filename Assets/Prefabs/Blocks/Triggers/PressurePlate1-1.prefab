@@ -10,11 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3479713456748663218}
   - component: {fileID: 8842572863694793146}
-  - component: {fileID: 3028314408345089427}
   - component: {fileID: 8282639881870221667}
   - component: {fileID: 2046430456634096613}
   - component: {fileID: 168697085603069067}
-  - component: {fileID: 3203927750026939330}
   m_Layer: 0
   m_Name: PressurePlate1-1
   m_TagString: Untagged
@@ -54,19 +52,6 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!114 &3028314408345089427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4251886640615049992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c5a872e92eaa94da7b1b6e3d66b6a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gridLocation: {x: 0, y: 0, z: 0}
 --- !u!114 &8282639881870221667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,6 +64,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c8c3305445fc394eb3b7f23ab9de7ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultPathRules: {fileID: 11400000, guid: ff6db468f52729847901ba54defb1d5f, type: 2}
+  alternatePathRules:
+  - {fileID: 11400000, guid: ff6db468f52729847901ba54defb1d5f, type: 2}
+  pathfindingRules: {fileID: 0}
+  gridLocation: {x: 0, y: 0, z: 0}
+  bottomCorner: {x: 0, y: 0, z: 0}
+  topCorner: {x: 1, y: 1, z: 1}
   isSurface: 0
   forceSurface: 0
   upAnimationName: pressurePlateUp
@@ -118,175 +110,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3203927750026939330
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4251886640615049992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2c7667d43cb96f44970375d5ad6a47d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  northIn: 0
-  eastIn: 0
-  southIn: 0
-  westIn: 0
-  northEastIn: 0
-  southEastIn: 0
-  southWestIn: 0
-  northWestIn: 0
-  upIn: 0
-  downIn: 0
-  upNorthIn: 0
-  upEastIn: 0
-  upSouthIn: 0
-  upWestIn: 0
-  downNorthIn: 0
-  downEastIn: 0
-  downSouthIn: 0
-  downWestIn: 0
-  upNorthEastIn: 0
-  upSouthEastIn: 0
-  upSouthWestIn: 0
-  upNorthWestIn: 0
-  downNorthEastIn: 0
-  downSouthEastIn: 0
-  downSouthWestIn: 0
-  downNorthWestIn: 0
-  northOut: 0
-  eastOut: 0
-  southOut: 0
-  westOut: 0
-  northEastOut: 0
-  southEastOut: 0
-  southWestOut: 0
-  northWestOut: 0
-  upOut: 0
-  downOut: 0
-  upNorthOut: 0
-  upEastOut: 0
-  upSouthOut: 0
-  upWestOut: 0
-  downNorthOut: 0
-  downEastOut: 0
-  downSouthOut: 0
-  downWestOut: 0
-  upNorthEastOut: 0
-  upSouthEastOut: 0
-  upSouthWestOut: 0
-  upNorthWestOut: 0
-  downNorthEastOut: 0
-  downSouthEastOut: 0
-  downSouthWestOut: 0
-  downNorthWestOut: 0
-  variantRules:
-  - northIn: 0
-    eastIn: 0
-    southIn: 0
-    westIn: 0
-    northEastIn: 0
-    southEastIn: 0
-    southWestIn: 0
-    northWestIn: 0
-    upIn: 0
-    downIn: 0
-    upNorthIn: 0
-    upEastIn: 0
-    upSouthIn: 0
-    upWestIn: 0
-    downNorthIn: 0
-    downEastIn: 0
-    downSouthIn: 0
-    downWestIn: 0
-    upNorthEastIn: 0
-    upSouthEastIn: 0
-    upSouthWestIn: 0
-    upNorthWestIn: 0
-    downNorthEastIn: 0
-    downSouthEastIn: 0
-    downSouthWestIn: 0
-    downNorthWestIn: 0
-    northOut: 0
-    eastOut: 0
-    southOut: 0
-    westOut: 0
-    northEastOut: 0
-    southEastOut: 0
-    southWestOut: 0
-    northWestOut: 0
-    upOut: 0
-    downOut: 0
-    upNorthOut: 0
-    upEastOut: 0
-    upSouthOut: 0
-    upWestOut: 0
-    downNorthOut: 0
-    downEastOut: 0
-    downSouthOut: 0
-    downWestOut: 0
-    upNorthEastOut: 0
-    upSouthEastOut: 0
-    upSouthWestOut: 0
-    upNorthWestOut: 0
-    downNorthEastOut: 0
-    downSouthEastOut: 0
-    downSouthWestOut: 0
-    downNorthWestOut: 0
-  - northIn: 1
-    eastIn: 1
-    southIn: 1
-    westIn: 1
-    northEastIn: 1
-    southEastIn: 1
-    southWestIn: 1
-    northWestIn: 1
-    upIn: 0
-    downIn: 1
-    upNorthIn: 0
-    upEastIn: 0
-    upSouthIn: 0
-    upWestIn: 0
-    downNorthIn: 1
-    downEastIn: 1
-    downSouthIn: 1
-    downWestIn: 1
-    upNorthEastIn: 0
-    upSouthEastIn: 0
-    upSouthWestIn: 0
-    upNorthWestIn: 0
-    downNorthEastIn: 1
-    downSouthEastIn: 1
-    downSouthWestIn: 1
-    downNorthWestIn: 1
-    northOut: 1
-    eastOut: 1
-    southOut: 1
-    westOut: 1
-    northEastOut: 1
-    southEastOut: 1
-    southWestOut: 1
-    northWestOut: 1
-    upOut: 0
-    downOut: 1
-    upNorthOut: 0
-    upEastOut: 0
-    upSouthOut: 0
-    upWestOut: 0
-    downNorthOut: 1
-    downEastOut: 1
-    downSouthOut: 1
-    downWestOut: 1
-    upNorthEastOut: 0
-    upSouthEastOut: 0
-    upSouthWestOut: 0
-    upNorthWestOut: 0
-    downNorthEastOut: 1
-    downSouthEastOut: 1
-    downSouthWestOut: 1
-    downNorthWestOut: 1
 --- !u!1 &9007806533170904794
 GameObject:
   m_ObjectHideFlags: 0

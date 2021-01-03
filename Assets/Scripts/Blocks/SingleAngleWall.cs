@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SingleAngleWall : Wall {
+public class SingleAngleWall : FadeWall {
 
     public float angle = 45;
     public override bool CheckFacing(Transform obj) {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Empty : BlockHandler {
+public class Empty : Block {
     [HideInInspector]
     public bool isSurface;
     [HideInInspector]
@@ -13,29 +13,31 @@ public class Empty : BlockHandler {
     }
 
     public void UpdatePathfinding() {
-        Vector3 location = GetComponent<BlockInfo>().gridLocation;
+        Vector3Int location = gridLocation;
         if (location.y <= 0 && !forceSurface) return;
         location.y -= 1;
-        GameObject obj = LevelRenderer.instance.GetObject(Vector3Int.RoundToInt(location));
-        if ((obj != null && obj.GetComponent<BlockHandler>() != null && obj.GetComponent<BlockHandler>().surfaceAbove) || forceSurface) {
-            GetComponent<PFRulesVariable>().SwitchRuleset(1);
+        Block block = LevelRenderer.instance.GetBlock(location);
+        if ((block != null && block.surfaceAbove) || forceSurface) {
+            if (alternatePathRules.Length > 0) {
+                pathfindingRules = alternatePathRules[0];
+            } else {
+                pathfindingRules = defaultPathRules;
+            }
             isSurface = true;
-        }
-        else {
-            GetComponent<PFRulesVariable>().SwitchRuleset(0);
+        } else {
+            pathfindingRules = defaultPathRules;
             isSurface = false;
         }
     }
 
     public override bool FindPathHere() {
         if (!isSurface) return false;
-        Vector3 location = GetComponent<BlockInfo>().gridLocation;
-        return LevelRenderer.instance.player.PathMove(location);
+        return LevelRenderer.instance.player.PathMove(gridLocation);
     }
 
-    public override void MovePlayerHere() {
-        if (!isSurface) return;
-        Vector3 location = GetComponent<BlockInfo>().gridLocation;
-        LevelRenderer.instance.player.Move(location, 3f);
+    public override bool MovePlayerHere() {
+        if (!isSurface) return false;
+        LevelRenderer.instance.player.Move(gridLocation, 3f);
+        return true;
     }
 }
