@@ -210,6 +210,7 @@ MonoBehaviour:
   - {fileID: 7706027281911655659}
   isLevelTransition: 0
   updatesSurroundingBlocks: 1
+  oneTimeOpen: 1
   requiredFlagNames:
   - LevelComplete1-4-1
   - LevelComplete1-4-2

@@ -142,7 +142,7 @@ public class AltarTrigger : Block, InteractableObject {
         }
 
         if (waitingForPlayer) {
-            if (Vector3.Distance(LevelRenderer.instance.player.gridPosition, FindClosestLocation()) <= 1 && LevelRenderer.instance.player.moveVelocity == Vector3.zero) {
+            if (Vector3.Distance(LevelRenderer.instance.player.gridPosition, FindClosestLocation()) < 2 && LevelRenderer.instance.player.moveVelocity == Vector3.zero) {
                 waitingForPlayer = false;
                 LevelRenderer.instance.player.TurnPlayer(FindClosestLocation() - LevelRenderer.instance.player.gridPosition);
                 Trigger();

@@ -273,7 +273,7 @@ MonoBehaviour:
     position: {x: 7, y: 5, z: 9}
     stateIndex: 1
     targetPositions: []
-  - objectPrefab: {fileID: 2589715489259147080, guid: 8aed625e38f1329439955049056c6c67,
+  - objectPrefab: {fileID: 2589715489259147080, guid: a8d5c052f3e6ecd43a4b9a7643788f90,
       type: 3}
     position: {x: 14, y: 1, z: 10}
     stateIndex: 0

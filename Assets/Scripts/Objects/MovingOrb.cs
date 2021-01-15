@@ -7,6 +7,7 @@ public class MovingOrb : MonoBehaviour {
 
     public OrbState state;
     public float orbSpeed;
+    public float fadeoutTime;
 
     public enum OrbState {
         Static,
@@ -24,29 +25,16 @@ public class MovingOrb : MonoBehaviour {
         Block block = LevelRenderer.instance.GetBlock(Vector3Int.FloorToInt(position));
         if (block != null) {
             if (block is OrbMirror) {
-                OrbMirror mirror = (OrbMirror)block;
-                switch (mirror.currentDirection) {
-                    case OrbMirror.FaceDirection.NorthEast:
-                        if (state == OrbState.MovingSouth) state = OrbState.MovingEast;
-                        else if (state == OrbState.MovingWest) state = OrbState.MovingNorth;
-                        else Destroy(gameObject);
-                        break;
-                    case OrbMirror.FaceDirection.SouthEast:
-                        if (state == OrbState.MovingNorth) state = OrbState.MovingEast;
-                        else if (state == OrbState.MovingWest) state = OrbState.MovingSouth;
-                        else Destroy(gameObject);
-                        break;
-                    case OrbMirror.FaceDirection.SouthWest:
-                        if (state == OrbState.MovingNorth) state = OrbState.MovingWest;
-                        else if (state == OrbState.MovingEast) state = OrbState.MovingSouth;
-                        else Destroy(gameObject);
-                        break;
-                    case OrbMirror.FaceDirection.NorthWest:
-                        if (state == OrbState.MovingSouth) state = OrbState.MovingWest;
-                        else if (state == OrbState.MovingEast) state = OrbState.MovingNorth;
-                        else Destroy(gameObject);
-                        break;
-                }
+                MirrorCollide(((OrbMirror)block).currentDirection);
+            } else if (block is OrbTrigger) {
+                OrbTrigger orbTrigger = (OrbTrigger)block;
+                orbTrigger.Trigger();
+                DoDestroy();
+            } else if (block is OrbRingTrigger) {
+                OrbRingTrigger orbRingTrigger = (OrbRingTrigger)block;
+                orbRingTrigger.Trigger();
+            } else if (!(block is Empty) && !(block is OrbCreator)) {
+                DoDestroy();
             }
         }
 
@@ -92,5 +80,52 @@ public class MovingOrb : MonoBehaviour {
                 orb.DoMove();
             }
         }
+    }
+
+    public void DoDestroy() {
+        GetComponents<AudioSource>()[1].Play();
+        IEnumerator coroutine = FadeOut();
+        StartCoroutine(coroutine);
+    }
+
+    public void MirrorCollide(OrbMirror.FaceDirection currentDirection) {
+        switch (currentDirection) {
+            case OrbMirror.FaceDirection.NorthEast:
+                if (state == OrbState.MovingSouth) state = OrbState.MovingEast;
+                else if (state == OrbState.MovingWest) state = OrbState.MovingNorth;
+                else DoDestroy();
+                break;
+            case OrbMirror.FaceDirection.SouthEast:
+                if (state == OrbState.MovingNorth) state = OrbState.MovingEast;
+                else if (state == OrbState.MovingWest) state = OrbState.MovingSouth;
+                else DoDestroy();
+                break;
+            case OrbMirror.FaceDirection.SouthWest:
+                if (state == OrbState.MovingNorth) state = OrbState.MovingWest;
+                else if (state == OrbState.MovingEast) state = OrbState.MovingSouth;
+                else DoDestroy();
+                break;
+            case OrbMirror.FaceDirection.NorthWest:
+                if (state == OrbState.MovingSouth) state = OrbState.MovingWest;
+                else if (state == OrbState.MovingEast) state = OrbState.MovingNorth;
+                else DoDestroy();
+                break;
+        }
+        GetComponents<AudioSource>()[1].Play();
+    }
+
+    public IEnumerator FadeOut() {
+        state = OrbState.Static;
+        Vector3 scale = Vector3.one;
+        while (scale.magnitude > 0.01) {
+            Vector3 step = Vector3.one * Time.deltaTime / fadeoutTime;
+            foreach (ParticleSystem item in GetComponentsInChildren<ParticleSystem>()) {
+                item.Stop();
+                item.transform.localScale -= step;
+            }
+            scale -= step;
+            yield return null;
+        }
+        Destroy(gameObject);
     }
 }

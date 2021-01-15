@@ -10,8 +10,12 @@ public class ToggleSwitch : Block, InteractableObject {
 
     public Transform pivot;
 
+    public bool automaticReset;
+    public bool findClosestPath;
+
     public string toggleOnName;
     public string toggleOffName;
+    public string toggleOnOffName;
 
     public Quaternion onRotation;
     public Quaternion offRotation;
@@ -22,22 +26,36 @@ public class ToggleSwitch : Block, InteractableObject {
     public Vector3 onScale;
     public Vector3 offScale;
 
-    private bool waitingForPlayer;
+    private bool waitingForPlayer = false;
+    private bool animationPlaying = false;
 
-    public void PlayAnimation() {
-        if (state) {
+    private Vector3 playerTargetPosition;
+
+    public IEnumerator PlayAnimation() {
+        animationPlaying = true;
+        if (automaticReset) {
+            GetComponent<Animation>().Play(toggleOnOffName);
+            float length = GetComponent<Animation>().GetClip(toggleOnOffName).length;
+            yield return new WaitForSeconds(length);
+            animationPlaying = false;
+        } else if (state) {
             GetComponent<Animation>().Play(toggleOnName);
-        }
-        else {
+            float length = GetComponent<Animation>().GetClip(toggleOnName).length;
+            yield return new WaitForSeconds(length);
+            animationPlaying = false;
+        } else {
             GetComponent<Animation>().Play(toggleOffName);
+            float length = GetComponent<Animation>().GetClip(toggleOffName).length;
+            yield return new WaitForSeconds(length);
+            animationPlaying = false;
         }
     }
 
     private void Update() {
         if (waitingForPlayer) {
-            if (LevelRenderer.instance.player.pathTargetPosition != gridLocation) {
+            if (LevelRenderer.instance.player.pathTargetPosition != playerTargetPosition) {
                 waitingForPlayer = false;
-            } else if (LevelRenderer.instance.player.gridPosition == gridLocation) {
+            } else if (LevelRenderer.instance.player.gridPosition == playerTargetPosition) {
                 waitingForPlayer = false;
                 Toggle();
             }
@@ -50,8 +68,11 @@ public class ToggleSwitch : Block, InteractableObject {
         for (int i = 0; i < targetPositions.Length; i++) {
             targets[i] = LevelRenderer.instance.GetBlock(targetPositions[i] + cornerLocation).GetComponent<TriggerableObject>();
         }
-
-        if (state) {
+        if (automaticReset) {
+            pivot.position += offOffset;
+            pivot.rotation = offRotation;
+            pivot.localScale = offScale;
+        } else if (state) {
             pivot.position += onOffset;
             pivot.rotation = onRotation;
             pivot.localScale = onScale;
@@ -63,8 +84,10 @@ public class ToggleSwitch : Block, InteractableObject {
     }
 
     public void Toggle() {
+        if (animationPlaying) return;
         state = !state;
-        PlayAnimation();
+        IEnumerator coroutine = PlayAnimation();
+        StartCoroutine(coroutine);
         foreach (TriggerableObject target in targets) {
             target.Trigger();
         }
@@ -85,6 +108,11 @@ public class ToggleSwitch : Block, InteractableObject {
 
     public override bool FindPathHere() {
         Vector3 location = gridLocation;
-        return LevelRenderer.instance.player.PathMove(location);
+        bool success = LevelRenderer.instance.player.PathMove(location, findClosestPath);
+        if (success) {
+            if (findClosestPath) playerTargetPosition = LevelRenderer.instance.player.pathTargetPosition;
+            else playerTargetPosition = gridLocation; 
+        }
+        return success;
     }
 }

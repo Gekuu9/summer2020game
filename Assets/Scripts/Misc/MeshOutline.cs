@@ -10,6 +10,9 @@ public class MeshOutline : MonoBehaviour {
     [HideInInspector]
     public bool outlineEnabled;
 
+    [HideInInspector]
+    public bool allowOutline = true;
+
     private void OnMouseEnter() {
         SetOutline(true);
     }
@@ -32,8 +35,14 @@ public class MeshOutline : MonoBehaviour {
         }
     }
 
+    private void Start() {
+        EventHandler.instance.suppressInput += DisallowOutline;
+        EventHandler.instance.handleInput += AllowOutline;
+        allowOutline = true;
+    }
+
     private void SetOutline(bool b) {
-        if (!enabled) b = false;
+        if (!enabled || !allowOutline) b = false;
         if (GetComponent<OutlineOrthoSingle>()) GetComponent<OutlineOrthoSingle>().enabled = b;
         if (GetComponent<OutlineOrtho>()) GetComponent<OutlineOrtho>().enabled = b;
         if (toggleChildren) {
@@ -49,5 +58,13 @@ public class MeshOutline : MonoBehaviour {
         }
 
         outlineEnabled = b;
+    }
+
+    private void DisallowOutline() {
+        allowOutline = false;
+    }
+
+    private void AllowOutline() {
+        allowOutline = true;
     }
 }

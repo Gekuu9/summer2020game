@@ -243,26 +243,26 @@ public class PathfindingGraph {
 
             if (nodeRules.inRules.Contains(d1) && otherRules.outRules.Contains(d2)) {
                 if (d1 == Block.Direction.NorthEast) {
-                    if (nodeRules.inRules.Contains(Block.Direction.North) && nodeRules.inRules.Contains(Block.Direction.East) &&
-                        otherRules.outRules.Contains(Block.Direction.South) && otherRules.outRules.Contains(Block.Direction.West)) {
+                    if (CheckPath(node, Block.Direction.North, true) && CheckPath(node, Block.Direction.East, true) &&
+                        CheckPath(other, Block.Direction.South, false) && CheckPath(other, Block.Direction.West, false)) {
                         other.outgoing.Add(node);
                     }
                 }
                 else if (d1 == Block.Direction.SouthEast) {
-                    if (nodeRules.inRules.Contains(Block.Direction.South) && nodeRules.inRules.Contains(Block.Direction.East) &&
-                        otherRules.outRules.Contains(Block.Direction.North) && otherRules.outRules.Contains(Block.Direction.West)) {
+                    if (CheckPath(node, Block.Direction.South, true) && CheckPath(node, Block.Direction.East, true) &&
+                        CheckPath(other, Block.Direction.North, false) && CheckPath(other, Block.Direction.West, false)) {
                         other.outgoing.Add(node);
                     }
                 }
                 else if (d1 == Block.Direction.SouthWest) {
-                    if (nodeRules.inRules.Contains(Block.Direction.South) && nodeRules.inRules.Contains(Block.Direction.West) &&
-                        otherRules.outRules.Contains(Block.Direction.North) && otherRules.outRules.Contains(Block.Direction.East)) {
+                    if (CheckPath(node, Block.Direction.South, true) && CheckPath(node, Block.Direction.West, true) &&
+                        CheckPath(other, Block.Direction.North, false) && CheckPath(other, Block.Direction.East, false)) {
                         other.outgoing.Add(node);
                     }
                 }
                 else if (d1 == Block.Direction.NorthWest) {
-                    if (nodeRules.inRules.Contains(Block.Direction.North) && nodeRules.inRules.Contains(Block.Direction.West) &&
-                        otherRules.outRules.Contains(Block.Direction.South) && otherRules.outRules.Contains(Block.Direction.East)) {
+                    if (CheckPath(node, Block.Direction.North, true) && CheckPath(node, Block.Direction.West, true) &&
+                        CheckPath(other, Block.Direction.South, false) && CheckPath(other, Block.Direction.East, false)) {
                         other.outgoing.Add(node);
                     }
                 }
@@ -273,26 +273,26 @@ public class PathfindingGraph {
 
             if (nodeRules.outRules.Contains(d1) && otherRules.inRules.Contains(d2)) {
                 if (d1 == Block.Direction.NorthEast) {
-                    if (nodeRules.outRules.Contains(Block.Direction.North) && nodeRules.outRules.Contains(Block.Direction.East) &&
-                        otherRules.inRules.Contains(Block.Direction.South) && otherRules.inRules.Contains(Block.Direction.West)) {
+                    if (CheckPath(node, Block.Direction.North, false) && CheckPath(node, Block.Direction.East, false) &&
+                        CheckPath(other, Block.Direction.South, true) && CheckPath(other, Block.Direction.West, true)) {
                         other.incoming.Add(node);
                     }
                 }
                 else if (d1 == Block.Direction.SouthEast) {
-                    if (nodeRules.outRules.Contains(Block.Direction.South) && nodeRules.outRules.Contains(Block.Direction.East) &&
-                        otherRules.inRules.Contains(Block.Direction.North) && otherRules.inRules.Contains(Block.Direction.West)) {
+                    if (CheckPath(node, Block.Direction.South, false) && CheckPath(node, Block.Direction.East, false) &&
+                        CheckPath(other, Block.Direction.North, true) && CheckPath(other, Block.Direction.West, true)) {
                         other.incoming.Add(node);
                     }
                 }
                 else if (d1 == Block.Direction.SouthWest) {
-                    if (nodeRules.outRules.Contains(Block.Direction.South) && nodeRules.outRules.Contains(Block.Direction.West) &&
-                        otherRules.inRules.Contains(Block.Direction.North) && otherRules.inRules.Contains(Block.Direction.East)) {
+                    if (CheckPath(node, Block.Direction.South, false) && CheckPath(node, Block.Direction.West, false) &&
+                        CheckPath(other, Block.Direction.North, true) && CheckPath(other, Block.Direction.East, true)) {
                         other.incoming.Add(node);
                     }
                 }
                 else if (d1 == Block.Direction.NorthWest) {
-                    if (nodeRules.outRules.Contains(Block.Direction.North) && nodeRules.outRules.Contains(Block.Direction.West) &&
-                        otherRules.inRules.Contains(Block.Direction.South) && otherRules.inRules.Contains(Block.Direction.East)) {
+                    if (CheckPath(node, Block.Direction.North, false) && CheckPath(node, Block.Direction.West, false) &&
+                        CheckPath(other, Block.Direction.South, true) && CheckPath(other, Block.Direction.East, true)) {
                         other.incoming.Add(node);
                     }
                 }

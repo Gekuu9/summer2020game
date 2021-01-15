@@ -6,6 +6,7 @@ public class ToggleLight : Empty, TriggerableObject {
 
     public bool fadeInOut;
     public float fadeSpeed;
+    public bool oneTimeTurnOn;
 
     public string[] requiredFlagNames;
     public bool allFlagsRequired;
@@ -38,6 +39,7 @@ public class ToggleLight : Empty, TriggerableObject {
     }
 
     public void Trigger() {
+        if (oneTimeTurnOn && isLightOn) return;
         isLightOn = !isLightOn;
         if (!fadeInOut) {
             GetComponent<Light>().intensity = isLightOn ? initialIntensity : 0;

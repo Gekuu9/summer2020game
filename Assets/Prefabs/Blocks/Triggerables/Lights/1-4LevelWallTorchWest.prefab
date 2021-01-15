@@ -52,7 +52,10 @@ MonoBehaviour:
   gridLocation: {x: 0, y: 0, z: 0}
   bottomCorner: {x: 0, y: 0, z: 0}
   topCorner: {x: 1, y: 1, z: 1}
-  state: 0
+  requiredFlagNames: []
+  allFlagsRequired: 0
+  oneTimeTurnOn: 1
+  isTorchOn: 0
   flagNamePrefix: LevelComplete1-4-
 --- !u!1 &7531898331546891051
 GameObject:

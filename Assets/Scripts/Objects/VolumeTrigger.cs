@@ -11,24 +11,9 @@ public class VolumeTrigger : Empty, InteractableObject {
 
     public TriggerableObject[] targets;
 
-    public string[] suppressingFlagNames;
-    public bool allFlagsRequired;
-
     private bool triggered;
 
     public void Trigger() {
-        foreach (string flagName in suppressingFlagNames) {
-            if (SaveDataManager.instance.GetBoolFlag(flagName)) {
-                if (!allFlagsRequired) {
-                    return;
-                }
-            } else {
-                if (allFlagsRequired) {
-                    break;
-                }
-            }
-        }
-
         for (int i = 0; i < targets.Length; i++) {
             targets[i].Trigger();
         }

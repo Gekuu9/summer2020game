@@ -116,6 +116,7 @@ MonoBehaviour:
   forceSurface: 0
   fadeInOut: 1
   fadeSpeed: 5
+  oneTimeTurnOn: 1
   requiredFlagNames:
   - LevelComplete1-4-1
   - LevelComplete1-4-2

@@ -20,8 +20,8 @@ public class LevelObject : MonoBehaviour {
     [Tooltip("Information about transitions in this level")]
     public LevelTransitionInfo[] levelTransitionInfo;
 
-    [Tooltip("Lighting objects in this level")]
-    public LightingFixture[] lightingFixtures;
+    [Tooltip("Others objects to be placed in this level")]
+    public MiscObject[] miscObjects;
 
     [Tooltip("Music clip to be played in this level")]
     public AudioClip music;
@@ -118,8 +118,8 @@ public class LevelObject : MonoBehaviour {
         // Load transition info into door objects
         LoadTransitions();
 
-        // Instantiate lighting objects
-        LoadLighting();
+        // Instantiate miscellaneous objects
+        LoadMiscObjects();
 
         // Instantiate UI elements
         if (UIElements == null) return;
@@ -280,11 +280,11 @@ public class LevelObject : MonoBehaviour {
         }
     }
 
-    public void LoadLighting() {
-        foreach (LightingFixture light in lightingFixtures) {
-            GameObject l = (GameObject) PrefabUtility.InstantiatePrefab(light.lightingPrefab, transform);
-            l.transform.position = light.position;
-            l.transform.rotation = light.lightingPrefab.transform.rotation;
+    public void LoadMiscObjects() {
+        foreach (MiscObject obj in miscObjects) {
+            GameObject o = (GameObject) PrefabUtility.InstantiatePrefab(obj.objectPrefab, transform);
+            o.transform.position = obj.position;
+            o.transform.rotation = obj.objectPrefab.transform.rotation;
         }
     }
 
@@ -456,8 +456,8 @@ public class LevelObject : MonoBehaviour {
             }
         }
 
-        if (parameters.lightingFixtures) {
-            foreach (LightingFixture item in lightingFixtures) {
+        if (parameters.miscObjects) {
+            foreach (MiscObject item in miscObjects) {
                 item.position += parameters.distance;
             }
         }
@@ -488,8 +488,8 @@ public class LevelObject : MonoBehaviour {
     }
 
     [Serializable]
-    public class LightingFixture {
-        public GameObject lightingPrefab;
+    public class MiscObject {
+        public GameObject objectPrefab;
         public Vector3 position;
     }
 
@@ -499,7 +499,7 @@ public class LevelObject : MonoBehaviour {
         public bool blockRects;
         public bool decorationRects;
         public bool interactables;
-        public bool lightingFixtures;
+        public bool miscObjects;
         public bool setPieces;
         public bool levelTransitions;
     }

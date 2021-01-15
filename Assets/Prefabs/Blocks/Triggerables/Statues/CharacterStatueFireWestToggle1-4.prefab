@@ -56,6 +56,7 @@ MonoBehaviour:
   - LevelComplete1-4-1
   - LevelComplete1-4-2
   allFlagsRequired: 0
+  oneTimeTurnOn: 1
   isTorchOn: 0
 --- !u!1001 &3458627667549769146
 PrefabInstance:

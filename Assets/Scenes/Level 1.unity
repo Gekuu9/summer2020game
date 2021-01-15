@@ -585,7 +585,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2071566352}
-  levelPrefab: {fileID: 8878762766787603674, guid: ff6da63b2efe5cf4e9b773c6a8198f46,
+  levelPrefab: {fileID: 1384550825842115242, guid: 5a4edcd7af838f349b2abaca27d283da,
     type: 3}
   mainUICanvas: {fileID: 541052726}
   currentLevelPrefab: {fileID: 0}
@@ -955,17 +955,17 @@ PrefabInstance:
     - target: {fileID: 203260152622156711, guid: 602db620b2887ef46ad5342d04004866,
         type: 3}
       propertyPath: startingPosition.x
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 203260152622156711, guid: 602db620b2887ef46ad5342d04004866,
         type: 3}
       propertyPath: startingPosition.y
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 203260152622156711, guid: 602db620b2887ef46ad5342d04004866,
         type: 3}
       propertyPath: startingPosition.z
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 203260152622156728, guid: 602db620b2887ef46ad5342d04004866,
         type: 3}

@@ -12,10 +12,320 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 824956d34cb4b2d4e8642850f5aafd8a, type: 3}
   m_Name: Level1-4-4
   m_EditorClassIdentifier: 
-  xSize: 0
-  ySize: 0
-  zSize: 0
-  blockRects: []
-  decorationRects: []
+  xSize: 20
+  ySize: 11
+  zSize: 22
+  blockRects:
+  - blockType: 4
+    prefabSetNumber: 0
+    corner0: {x: 1, y: 3, z: 21}
+    corner1: {x: 16, y: 7, z: 22}
+  - blockType: 5
+    prefabSetNumber: 0
+    corner0: {x: 16, y: 3, z: 16}
+    corner1: {x: 17, y: 7, z: 21}
+  - blockType: 7
+    prefabSetNumber: 0
+    corner0: {x: 0, y: 3, z: 16}
+    corner1: {x: 1, y: 7, z: 21}
+  - blockType: 3
+    prefabSetNumber: 0
+    corner0: {x: 1, y: 1, z: 17}
+    corner1: {x: 16, y: 4, z: 21}
+  - blockType: 5
+    prefabSetNumber: 0
+    corner0: {x: 16, y: 1, z: 1}
+    corner1: {x: 17, y: 7, z: 17}
+  - blockType: 7
+    prefabSetNumber: 0
+    corner0: {x: 0, y: 1, z: 1}
+    corner1: {x: 1, y: 7, z: 17}
+  - blockType: 6
+    prefabSetNumber: 0
+    corner0: {x: 1, y: 1, z: 0}
+    corner1: {x: 16, y: 7, z: 1}
+  - blockType: 2
+    prefabSetNumber: 0
+    corner0: {x: 1, y: 0, z: 1}
+    corner1: {x: 16, y: 1, z: 17}
+  - blockType: 3
+    prefabSetNumber: 0
+    corner0: {x: 8, y: 1, z: 8}
+    corner1: {x: 9, y: 2, z: 9}
+  - blockType: 3
+    prefabSetNumber: 0
+    corner0: {x: 8, y: 1, z: 2}
+    corner1: {x: 9, y: 2, z: 3}
+  - blockType: 3
+    prefabSetNumber: 0
+    corner0: {x: 2, y: 1, z: 2}
+    corner1: {x: 3, y: 2, z: 3}
+  - blockType: 3
+    prefabSetNumber: 0
+    corner0: {x: 2, y: 1, z: 8}
+    corner1: {x: 3, y: 2, z: 9}
+  - blockType: 3
+    prefabSetNumber: 0
+    corner0: {x: 8, y: 1, z: 5}
+    corner1: {x: 9, y: 2, z: 6}
+  - blockType: 3
+    prefabSetNumber: 0
+    corner0: {x: 2, y: 1, z: 5}
+    corner1: {x: 3, y: 2, z: 6}
+  - blockType: 3
+    prefabSetNumber: 0
+    corner0: {x: 14, y: 1, z: 2}
+    corner1: {x: 15, y: 2, z: 3}
+  - blockType: 3
+    prefabSetNumber: 0
+    corner0: {x: 14, y: 1, z: 5}
+    corner1: {x: 15, y: 2, z: 6}
+  - blockType: 3
+    prefabSetNumber: 0
+    corner0: {x: 14, y: 1, z: 8}
+    corner1: {x: 15, y: 2, z: 9}
+  - blockType: 3
+    prefabSetNumber: 0
+    corner0: {x: 8, y: 1, z: 11}
+    corner1: {x: 9, y: 2, z: 12}
+  - blockType: 3
+    prefabSetNumber: 0
+    corner0: {x: 5, y: 1, z: 2}
+    corner1: {x: 6, y: 2, z: 3}
+  - blockType: 3
+    prefabSetNumber: 0
+    corner0: {x: 11, y: 1, z: 2}
+    corner1: {x: 12, y: 2, z: 3}
+  - blockType: 3
+    prefabSetNumber: 0
+    corner0: {x: 6, y: 1, z: 15}
+    corner1: {x: 11, y: 3, z: 18}
+  - blockType: 0
+    prefabSetNumber: 0
+    corner0: {x: 6, y: 3, z: 15}
+    corner1: {x: 11, y: 7, z: 18}
+  - blockType: 8
+    prefabSetNumber: 0
+    corner0: {x: 6, y: 3, z: 18}
+    corner1: {x: 11, y: 4, z: 19}
+  - blockType: 3
+    prefabSetNumber: 0
+    corner0: {x: 16, y: 4, z: 9}
+    corner1: {x: 19, y: 5, z: 13}
+  - blockType: 0
+    prefabSetNumber: 0
+    corner0: {x: 16, y: 5, z: 9}
+    corner1: {x: 19, y: 7, z: 13}
+  - blockType: 25
+    prefabSetNumber: 0
+    corner0: {x: 16, y: 5, z: 13}
+    corner1: {x: 17, y: 7, z: 14}
+  - blockType: 4
+    prefabSetNumber: 0
+    corner0: {x: 17, y: 5, z: 13}
+    corner1: {x: 19, y: 7, z: 14}
+  - blockType: 26
+    prefabSetNumber: 0
+    corner0: {x: 16, y: 5, z: 8}
+    corner1: {x: 17, y: 7, z: 9}
+  - blockType: 6
+    prefabSetNumber: 0
+    corner0: {x: 17, y: 5, z: 8}
+    corner1: {x: 19, y: 7, z: 9}
+  - blockType: 5
+    prefabSetNumber: 0
+    corner0: {x: 19, y: 5, z: 9}
+    corner1: {x: 20, y: 7, z: 13}
+  - blockType: 20
+    prefabSetNumber: 0
+    corner0: {x: 8, y: 4, z: 21}
+    corner1: {x: 9, y: 5, z: 22}
+  - blockType: 2
+    prefabSetNumber: 0
+    corner0: {x: 8, y: 3, z: 21}
+    corner1: {x: 9, y: 4, z: 22}
+  - blockType: 10
+    prefabSetNumber: 0
+    corner0: {x: 15, y: 4, z: 17}
+    corner1: {x: 16, y: 5, z: 18}
+  decorationRects:
+  - decorationIndex: 22
+    decorationSetNumber: 2
+    corner0: {x: 1, y: 7, z: 0}
+    corner1: {x: 16, y: 8, z: 1}
+  - decorationIndex: 23
+    decorationSetNumber: 2
+    corner0: {x: 0, y: 7, z: 1}
+    corner1: {x: 1, y: 8, z: 21}
+  - decorationIndex: 20
+    decorationSetNumber: 2
+    corner0: {x: 1, y: 7, z: 21}
+    corner1: {x: 16, y: 8, z: 22}
+  - decorationIndex: 21
+    decorationSetNumber: 2
+    corner0: {x: 16, y: 7, z: 1}
+    corner1: {x: 17, y: 8, z: 8}
+  - decorationIndex: 25
+    decorationSetNumber: 2
+    corner0: {x: 16, y: 7, z: 8}
+    corner1: {x: 17, y: 8, z: 9}
+  - decorationIndex: 21
+    decorationSetNumber: 2
+    corner0: {x: 16, y: 7, z: 14}
+    corner1: {x: 17, y: 8, z: 21}
+  - decorationIndex: 24
+    decorationSetNumber: 2
+    corner0: {x: 16, y: 7, z: 13}
+    corner1: {x: 17, y: 8, z: 14}
+  - decorationIndex: 20
+    decorationSetNumber: 2
+    corner0: {x: 17, y: 7, z: 13}
+    corner1: {x: 19, y: 8, z: 14}
+  - decorationIndex: 22
+    decorationSetNumber: 2
+    corner0: {x: 17, y: 7, z: 8}
+    corner1: {x: 19, y: 8, z: 9}
+  - decorationIndex: 21
+    decorationSetNumber: 2
+    corner0: {x: 19, y: 7, z: 9}
+    corner1: {x: 20, y: 8, z: 13}
+  - decorationIndex: 2
+    decorationSetNumber: 0
+    corner0: {x: 2, y: 5, z: 20}
+    corner1: {x: 3, y: 6, z: 21}
+  - decorationIndex: 2
+    decorationSetNumber: 0
+    corner0: {x: 6, y: 5, z: 20}
+    corner1: {x: 7, y: 6, z: 21}
+  - decorationIndex: 2
+    decorationSetNumber: 0
+    corner0: {x: 10, y: 5, z: 20}
+    corner1: {x: 11, y: 6, z: 21}
+  - decorationIndex: 2
+    decorationSetNumber: 0
+    corner0: {x: 14, y: 5, z: 20}
+    corner1: {x: 15, y: 6, z: 21}
+  - decorationIndex: 3
+    decorationSetNumber: 0
+    corner0: {x: 15, y: 6, z: 14}
+    corner1: {x: 16, y: 7, z: 15}
+  - decorationIndex: 3
+    decorationSetNumber: 0
+    corner0: {x: 15, y: 6, z: 7}
+    corner1: {x: 16, y: 7, z: 8}
   setPieces: []
-  interactables: []
+  interactables:
+  - objectPrefab: {fileID: 1430714535256539978, guid: d3d2b774db10bf9479fe6839f44a6a69,
+      type: 3}
+    position: {x: 8, y: 2, z: 11}
+    stateIndex: 2
+    targetPositions: []
+  - objectPrefab: {fileID: 7746632661387421865, guid: 19d134890c8f8e94fa3a40bb504f0d3a,
+      type: 3}
+    position: {x: 8, y: 2, z: 8}
+    stateIndex: 0
+    targetPositions: []
+  - objectPrefab: {fileID: 7746632661387421865, guid: 19d134890c8f8e94fa3a40bb504f0d3a,
+      type: 3}
+    position: {x: 2, y: 2, z: 8}
+    stateIndex: 1
+    targetPositions: []
+  - objectPrefab: {fileID: 7746632661387421865, guid: 19d134890c8f8e94fa3a40bb504f0d3a,
+      type: 3}
+    position: {x: 14, y: 2, z: 8}
+    stateIndex: 2
+    targetPositions: []
+  - objectPrefab: {fileID: 3031992692038652722, guid: a2792498e3f5ab34e94ec39ac1e6bfc3,
+      type: 3}
+    position: {x: 14, y: 2, z: 5}
+    stateIndex: 0
+    targetPositions:
+    - {x: 15, y: 4, z: 16}
+  - objectPrefab: {fileID: 3031992692038652722, guid: a2792498e3f5ab34e94ec39ac1e6bfc3,
+      type: 3}
+    position: {x: 2, y: 2, z: 5}
+    stateIndex: 0
+    targetPositions:
+    - {x: 15, y: 4, z: 13}
+  - objectPrefab: {fileID: 7746632661387421865, guid: 19d134890c8f8e94fa3a40bb504f0d3a,
+      type: 3}
+    position: {x: 2, y: 2, z: 2}
+    stateIndex: 0
+    targetPositions: []
+  - objectPrefab: {fileID: 7746632661387421865, guid: 19d134890c8f8e94fa3a40bb504f0d3a,
+      type: 3}
+    position: {x: 14, y: 2, z: 2}
+    stateIndex: 3
+    targetPositions: []
+  - objectPrefab: {fileID: 7746632661387421865, guid: 19d134890c8f8e94fa3a40bb504f0d3a,
+      type: 3}
+    position: {x: 8, y: 2, z: 2}
+    stateIndex: 0
+    targetPositions: []
+  - objectPrefab: {fileID: 3031992692038652722, guid: a2792498e3f5ab34e94ec39ac1e6bfc3,
+      type: 3}
+    position: {x: 8, y: 2, z: 5}
+    stateIndex: 0
+    targetPositions:
+    - {x: 15, y: 4, z: 14}
+  - objectPrefab: {fileID: 4735521030286159011, guid: 07824cad724eaf942b12c45717fb202b,
+      type: 3}
+    position: {x: 7, y: 3, z: 15}
+    stateIndex: 0
+    targetPositions:
+    - {x: 8, y: 2, z: 11}
+  - objectPrefab: {fileID: 4735521030286159011, guid: 07824cad724eaf942b12c45717fb202b,
+      type: 3}
+    position: {x: 9, y: 3, z: 15}
+    stateIndex: 0
+    targetPositions:
+    - {x: 8, y: 2, z: 8}
+  - objectPrefab: {fileID: 3031992692038652722, guid: 22d5e3ccdc1271240be6987e191e068b,
+      type: 3}
+    position: {x: 5, y: 2, z: 2}
+    stateIndex: 1
+    targetPositions:
+    - {x: 8, y: 2, z: 2}
+    - {x: 15, y: 4, z: 12}
+  - objectPrefab: {fileID: 3031992692038652722, guid: 373429ec1b7caa044907065bbfc630bd,
+      type: 3}
+    position: {x: 11, y: 2, z: 2}
+    stateIndex: 1
+    targetPositions:
+    - {x: 8, y: 2, z: 2}
+    - {x: 15, y: 4, z: 15}
+  - objectPrefab: {fileID: 1926616636793207973, guid: 33c1cfb5ed8cbe442a083467e1b52a63,
+      type: 3}
+    position: {x: 15, y: 4, z: 16}
+    stateIndex: 0
+    targetPositions: []
+  - objectPrefab: {fileID: 1926616636793207973, guid: 33c1cfb5ed8cbe442a083467e1b52a63,
+      type: 3}
+    position: {x: 15, y: 4, z: 15}
+    stateIndex: 0
+    targetPositions: []
+  - objectPrefab: {fileID: 1926616636793207973, guid: 33c1cfb5ed8cbe442a083467e1b52a63,
+      type: 3}
+    position: {x: 15, y: 4, z: 14}
+    stateIndex: 0
+    targetPositions: []
+  - objectPrefab: {fileID: 1926616636793207973, guid: 33c1cfb5ed8cbe442a083467e1b52a63,
+      type: 3}
+    position: {x: 15, y: 4, z: 13}
+    stateIndex: 0
+    targetPositions: []
+  - objectPrefab: {fileID: 1926616636793207973, guid: 33c1cfb5ed8cbe442a083467e1b52a63,
+      type: 3}
+    position: {x: 15, y: 4, z: 12}
+    stateIndex: 0
+    targetPositions: []
+  - objectPrefab: {fileID: 4247742636557137008, guid: 8f2adc7a9bb7c9848b778aa55d6f35a9,
+      type: 3}
+    position: {x: 17, y: 5, z: 10}
+    stateIndex: 4
+    targetPositions: []
+  - objectPrefab: {fileID: 3752705163032261709, guid: ef27cbf7391e97d48b81ef277a0c28fc,
+      type: 3}
+    position: {x: 8, y: 10, z: 8}
+    stateIndex: 0
+    targetPositions: []

@@ -7,6 +7,7 @@ public class ToggleTorch : Block, TriggerableObject {
 
     public string[] requiredFlagNames;
     public bool allFlagsRequired;
+    public bool oneTimeTurnOn;
 
     [HideInInspector]
     public bool isTorchOn;
@@ -35,6 +36,7 @@ public class ToggleTorch : Block, TriggerableObject {
     }
 
     public void Trigger() {
+        if (isTorchOn && oneTimeTurnOn) return;
         isTorchOn = !isTorchOn;
         transform.Find("Fire").gameObject.SetActive(isTorchOn);
         foreach (AudioSource source in GetComponentsInChildren<AudioSource>()) {

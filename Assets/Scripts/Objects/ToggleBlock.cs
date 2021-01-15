@@ -29,13 +29,13 @@ public class ToggleBlock : Block, TriggerableObject {
         state = stateIndex > 0;
 
         if (state) {
-            movingBlock.transform.position += onOffset;
-            movingBlock.transform.rotation = onRotation;
+            movingBlock.transform.localPosition += onOffset;
+            movingBlock.transform.localRotation = onRotation;
             movingBlock.transform.localScale = onScale;
         }
         else {
-            movingBlock.transform.position += offOffset;
-            movingBlock.transform.rotation = offRotation;
+            movingBlock.transform.localPosition += offOffset;
+            movingBlock.transform.localRotation = offRotation;
             movingBlock.transform.localScale = offScale;
         }
 

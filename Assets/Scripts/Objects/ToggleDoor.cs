@@ -10,6 +10,7 @@ public class ToggleDoor : Door, TriggerableObject {
 
     public bool isLevelTransition;
     public bool updatesSurroundingBlocks;
+    public bool oneTimeOpen;
 
     public string[] requiredFlagNames;
     public bool allFlagsRequired;
@@ -106,6 +107,7 @@ public class ToggleDoor : Door, TriggerableObject {
     }
 
     public void Trigger() {
+        if (oneTimeOpen && isOpen) return;
         isOpen = !isOpen;
         if (GetComponent<MeshOutline>()) GetComponent<MeshOutline>().enabled = isOpen;
         PlayAnimation();

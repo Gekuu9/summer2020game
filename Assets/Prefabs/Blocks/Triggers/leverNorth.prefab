@@ -812,8 +812,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 9119091566941859196}
   - {fileID: 28416866329056878}
+  - {fileID: 9119091566941859196}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -830,6 +830,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: 5470dff4f5d76e7489ba2294301857e4, type: 2}
   - {fileID: 7400000, guid: 924aac34519b82c49868b8b02e2e198a, type: 2}
+  - {fileID: 7400000, guid: 2f6504b924188fd41825eca43e9b47fc, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -849,13 +850,16 @@ MonoBehaviour:
   defaultPathRules: {fileID: 11400000, guid: ff6db468f52729847901ba54defb1d5f, type: 2}
   alternatePathRules: []
   pathfindingRules: {fileID: 0}
+  containedBlock: {fileID: 0}
   gridLocation: {x: 0, y: 0, z: 0}
   bottomCorner: {x: 0, y: 0, z: 0}
   topCorner: {x: 1, y: 1, z: 1}
   state: 0
   pivot: {fileID: 28416866329056878}
+  automaticReset: 0
   toggleOnName: LeverDown
   toggleOffName: LeverUp
+  toggleOnOffName: LeverDownUp
   onRotation: {x: 0.86602545, y: 0, z: 0, w: 0.49999997}
   offRotation: {x: 0, y: 0, z: 0, w: 0}
   onOffset: {x: 0, y: 0, z: 0}
@@ -907,6 +911,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   extraObjects: []
   toggleChildren: 0
+  outlineEnabled: 0
 --- !u!1 &5114674192823231382
 GameObject:
   m_ObjectHideFlags: 0
@@ -939,7 +944,7 @@ Transform:
   m_Children:
   - {fileID: 4798778978877200298}
   m_Father: {fileID: 5403233119898269209}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &536162447020071906
 MeshFilter:
@@ -2810,5 +2815,5 @@ Transform:
   m_Children:
   - {fileID: 8492971071325882463}
   m_Father: {fileID: 5403233119898269209}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 2.6758852, y: 0, z: 0}

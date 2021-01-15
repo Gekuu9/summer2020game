@@ -133,8 +133,16 @@ public class Player : MonoBehaviour {
         int endIndex = (int)endPosition.x + (int)endPosition.y * LevelRenderer.instance.levelObject.xSize + (int)endPosition.z * LevelRenderer.instance.levelObject.xSize * LevelRenderer.instance.levelObject.ySize;
         AStarPathfinding.APath thisPath = LevelRenderer.instance.levelObject.pathfinder.FindPath(startIndex, endIndex, findClosest);
         if (thisPath != null) {
+            if (thisPath.node == null) {
+                pathTargetPosition = gridPosition;
+                return true;
+            }
             currentPath = thisPath;
-            pathTargetPosition = endPosition;
+            AStarPathfinding.APath p = thisPath;
+            while (p.next != null) {
+                p = p.next;
+            }
+            pathTargetPosition = p.node.location;
             onFindNewPath?.Invoke();
             return true;
         } else {
